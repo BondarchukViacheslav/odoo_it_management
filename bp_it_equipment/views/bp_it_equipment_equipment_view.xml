@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bp_it_equipment_equipment_view_list" model="ir.ui.view">
+        <field name="name">bp.it.equipment.equipment.view.list</field>
+        <field name="model">bp.it.equipment.equipment</field>
+        <field name="arch" type="xml">
+            <list string="Equipment" decoration-info="state == 'available'" decoration-warning="state == 'repair'">
+                <field name="name"/>
+                <field name="category_id"/>
+                <field name="serial_number"/>
+                <field name="inventory_number"/>
+                <field name="state" widget="badge"/>
+                <field name="purchase_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="bp_it_equipment_equipment_view_form" model="ir.ui.view">
+        <field name="name">bp.it.equipment.equipment.view.form</field>
+        <field name="model">bp.it.equipment.equipment</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_set_available" string="Validate" type="object"
+                            class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="action_set_repair" string="Send to Repair" type="object"
+                            invisible="state not in ['available', 'assigned']"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,available,assigned"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="e.g. Laptop HP EliteBook"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Technical Info">
+                            <field name="category_id"/>
+                            <field name="serial_number"/>
+                            <field name="inventory_number"/>
+                        </group>
+                        <group string="Dates">
+                            <field name="purchase_date"/>
+                            <field name="warranty_expiry"/>
+                            <field name="active" groups="base.group_no_one"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes" name="notes">
+                            <field name="note"/>
+                        </page>
+                        <page string="Status History" name="status_history">
+                            <field name="status_log_ids" readonly="1">
+                                <list string="History">
+                                    <field name="date"/>
+                                    <field name="old_state" widget="badge" decoration-muted="1"/>
+                                    <field name="new_state" widget="badge" decoration-info="new_state == 'available'"
+                                           decoration-success="new_state == 'assigned'"/>
+                                    <field name="user_id"/>
+                                    <field name="note"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="bp_it_equipment_equipment_view_kanban" model="ir.ui.view">
+        <field name="name">bp.it.equipment.equipment.kanban</field>
+        <field name="model">bp.it.equipment.equipment</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" group_create="false" group_edit="false" group_delete="false">
+                <field name="category_id"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                </strong>
+                                <div class="o_kanban_record_subtitle">
+                                    <field name="category_id"/>
+                                    <field name="inventory_number"/>
+                                </div>
+                                <div>
+                                    <span>S/N:</span>
+                                    <field name="serial_number"/>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <field name="activity_ids" widget="kanban_activity"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="bp_it_equipment_equipment_view_search" model="ir.ui.view">
+        <field name="name">bp.it.equipment.equipment.search</field>
+        <field name="model">bp.it.equipment.equipment</field>
+        <field name="arch" type="xml">
+            <search string="Search Equipment">
+                <field name="name"/>
+                <field name="serial_number"/>
+                <field name="inventory_number"/>
+                <field name="category_id"/>
+
+                <group>
+                    <filter string="Category" name="group_by_category" context="{'group_by': 'category_id'}"/>
+                    <filter string="State" name="group_by_state" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="bp_it_equipment_equipment_action" model="ir.actions.act_window">
+        <field name="name">IT Equipment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bp.it.equipment.equipment</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="bp_it_equipment_equipment_view_search"/>
+        <field name="context">{'search_default_group_by_category': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first equipment!
+            </p>
+        </field>
+    </record>
+
+</odoo>

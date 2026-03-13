@@ -9,6 +9,12 @@
                 <field name="name"/>
                 <field name="software_type"/>
                 <field name="license_type"/>
+                <field name="license_required" widget="boolean_toggle"/>
+                <field name="license_key"/>
+                <field name="license_status" widget="badge"
+                       decoration-danger="license_status == 'missing'"
+                       decoration-success="license_status == 'valid'"
+                       decoration-info="license_status == 'not_required'"/>
                 <field name="equipment_id"/>
                 <field name="expiration_date" widget="remaining_days"/>
                 <field name="is_active" widget="boolean_toggle"/>

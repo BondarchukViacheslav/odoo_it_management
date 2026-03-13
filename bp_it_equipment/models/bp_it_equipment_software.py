@@ -8,6 +8,12 @@ class BPITEquipmentSoftware(models.Model):
 
     name = fields.Char(string='Software Name', required=True, tracking=True)
 
+    license_status = fields.Selection([
+        ('valid', 'Valid'),
+        ('missing', 'Missing Key'),
+        ('not_required', 'Not Required')
+    ], string='License Status', compute='_compute_license_status', store=True)
+
     software_type = fields.Selection([
         ('os', 'Operating System'),
         ('app', 'Application'),
@@ -31,9 +37,6 @@ class BPITEquipmentSoftware(models.Model):
         string='License Key / ID',
         tracking=True)
 
-    # Зв'язок з технікою (одна ліцензія — один пристрій)
-    # Якщо потрібно ставити один Office на 5 комп'ютерів,
-    # пізніше змінімо на Many2many
     equipment_id = fields.Many2one(
         'bp.it.equipment.equipment',
         string='Installed On',
@@ -45,3 +48,13 @@ class BPITEquipmentSoftware(models.Model):
 
     is_active = fields.Boolean(string='Is Active', default=True)
     notes = fields.Text(string='Notes')
+
+    @api.depends('license_required', 'license_key')
+    def _compute_license_status(self):
+        for record in self:
+            if not record.license_required:
+                record.license_status = 'not_required'
+            elif record.license_key:
+                record.license_status = 'valid'
+            else:
+                record.license_status = 'missing'

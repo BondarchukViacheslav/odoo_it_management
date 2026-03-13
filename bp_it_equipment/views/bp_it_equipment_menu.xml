@@ -1,0 +1,30 @@
+<odoo>
+    <menuitem id="bp_it_equipment_menu_root"
+              name="IT Infrastructure"
+              web_icon="bp_it_equipment,static/description/icon.png"
+              sequence="10"/>
+
+    <menuitem id="bp_it_equipment_assignment_menu_list"
+              name="Assignments"
+              parent="bp_it_equipment_menu_root"
+              action="bp_it_equipment_assignment_action"
+              sequence="10"/>
+
+    <menuitem id="bp_it_equipment_menu_main"
+              name="Equipment"
+              parent="bp_it_equipment_menu_root"
+              sequence="20"/>
+
+    <menuitem id="bp_it_equipment_equipment_menu_list"
+              name="Equipment"
+              parent="bp_it_equipment_menu_main"
+              action="bp_it_equipment_equipment_action"
+              sequence="10"/>
+
+    <menuitem id="bp_it_equipment_category_menu_list"
+              name="Category"
+              parent="bp_it_equipment_menu_main"
+              action="bp_it_equipment_category_action"
+              sequence="20"/>
+
+</odoo>

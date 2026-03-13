@@ -10,6 +10,7 @@
                 <field name="serial_number"/>
                 <field name="inventory_number"/>
                 <field name="state" widget="badge"/>
+                <field name="employee_id" widget="many2one_avatar_user" invisible="not employee_id"/>
                 <field name="purchase_date"/>
             </list>
         </field>
@@ -32,9 +33,11 @@
                         <h1>
                             <field name="name" placeholder="e.g. Laptop HP EliteBook"/>
                         </h1>
+                        <field name="state" widget="badge"/>
                     </div>
                     <group>
                         <group string="Technical Info">
+                            <field name="employee_id" widget="many2one_avatar_user"/>
                             <field name="category_id"/>
                             <field name="serial_number"/>
                             <field name="inventory_number"/>
@@ -64,9 +67,7 @@
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                    <field name="message_follower_ids"/>
-                    <field name="activity_ids"/>
-                    <field name="message_ids"/>
+                    <chatter/>
                 </div>
             </form>
         </field>
@@ -93,8 +94,22 @@
                                     <span>S/N:</span>
                                     <field name="serial_number"/>
                                 </div>
-                                <div class="oe_kanban_bottom_right">
-                                    <field name="activity_ids" widget="kanban_activity"/>
+                                <!--                                <div class="oe_kanban_bottom_right">-->
+                                <!--                                    <field name="activity_ids" widget="kanban_activity"/>-->
+                                <!--                                </div>-->
+                                <div class="oe_kanban_footer">
+                                    <div class="o_kanban_record_bottom">
+                                        <div class="oe_kanban_bottom_left">
+                                            <field name="category_id" options="{'no_open': True}"/>
+                                        </div>
+
+                                        <div class="oe_kanban_bottom_right">
+                                            <field name="activity_ids" widget="kanban_activity"/>
+
+                                            <field name="employee_id" widget="many2one_avatar_user"
+                                                   invisible="not employee_id"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -115,8 +130,8 @@
                 <field name="category_id"/>
 
                 <group>
-                    <filter string="Category" name="group_by_category" context="{'group_by': 'category_id'}"/>
                     <filter string="State" name="group_by_state" context="{'group_by': 'state'}"/>
+                    <filter string="Category" name="group_by_category" context="{'group_by': 'category_id'}"/>
                 </group>
             </search>
         </field>
@@ -128,7 +143,7 @@
         <field name="res_model">bp.it.equipment.equipment</field>
         <field name="view_mode">kanban,list,form</field>
         <field name="search_view_id" ref="bp_it_equipment_equipment_view_search"/>
-        <field name="context">{'search_default_group_by_category': 1}</field>
+        <field name="context">{'search_default_group_by_state': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create your first equipment!

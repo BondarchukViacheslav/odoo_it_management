@@ -1,0 +1,24 @@
+<odoo>
+    <record id="bp_it_equipment_assignment_view_list" model="ir.ui.view">
+        <field name="name">bp.it.equipment.assignment.view.list</field>
+        <field name="model">bp.it.equipment.assignment</field>
+        <field name="arch" type="xml">
+            <list string="Assignments">
+                <field name="name"/>
+                <field name="equipment_id"/>
+                <field name="employee_id"/>
+                <field name="date_start"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'"
+                       decoration-success="state == 'active'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="bp_it_equipment_assignment_action" model="ir.actions.act_window">
+        <field name="name">Assignments</field>
+        <field name="res_model">bp.it.equipment.assignment</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+</odoo>

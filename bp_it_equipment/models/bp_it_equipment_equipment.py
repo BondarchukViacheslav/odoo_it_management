@@ -50,6 +50,13 @@ class BPITEquipmentEquipment(models.Model):
         required=True
     )
 
+    employee_id = fields.Many2one(
+        'res.users',
+        string='Assigned To',
+        tracking=True,
+        help="Current user of this equipment"
+    )
+
     status_log_ids = fields.One2many('bp.it.equipment.status.log', 'equipment_id')
 
     def action_set_available(self):
@@ -74,15 +81,40 @@ class BPITEquipmentEquipment(models.Model):
         return records
 
     def write(self, vals):
-        if 'state' in vals:
-            for record in self:
-                if record.state != vals['state']:
-                    self.env['bp.it.equipment.status.log'].create({
+        for record in self:
+            # 1. ЛОГІКА ІСТОРІЇ СТАТУСІВ (Твій код)
+            if 'state' in vals and record.state != vals['state']:
+                self.env['bp.it.equipment.status.log'].create({
+                    'equipment_id': record.id,
+                    'old_state': record.state,
+                    'new_state': vals['state'],
+                    'user_id': self.env.user.id,
+                    'note': vals.get('note', 'Status change via interface')
+                })
+
+            # 2. ЛОГІКА ПРИЗНАЧЕНЬ (Assignments)
+            if 'employee_id' in vals:
+                new_employee_id = vals.get('employee_id')
+                if new_employee_id:
+                    # Створюємо запис про видачу
+                    self.env['bp.it.equipment.assignment'].create({
                         'equipment_id': record.id,
-                        'old_state': record.state,
-                        'new_state': vals['state'],
-                        'note': 'Status change via interface'
+                        'employee_id': new_employee_id,
+                        'date_start': fields.Date.today(),
+                        'state': 'active',
+                        'name': f"Auto: {record.name}"
                     })
+                elif record.employee_id:
+                    # Якщо працівника прибрали — закриваємо останнє активне призначення
+                    last_assignment = self.env['bp.it.equipment.assignment'].search([
+                        ('equipment_id', '=', record.id),
+                        ('employee_id', '=', record.employee_id.id),
+                        ('state', '=', 'active')
+                    ], limit=1)
+                    if last_assignment:
+                        last_assignment.state = 'returned'
+                        last_assignment.date_end = fields.Date.today()
+
         return super().write(vals)
 
     @api.model
@@ -91,3 +123,16 @@ class BPITEquipmentEquipment(models.Model):
         # ВАЖЛИВО: перетворюємо на список (list), щоб Odoo зрозуміла результат
         state_list = [key for key, val in self._fields['state'].selection]
         return state_list
+
+    @api.onchange('employee_id')
+    def _onchange_employee_id(self):
+        """
+        Якщо ми обираємо працівника, статус автоматично стає 'Assigned'.
+        Якщо прибираємо працівника — повертається в 'Available'.
+        """
+        if self.employee_id:
+            self.state = 'assigned'
+        else:
+            # Якщо техніка була призначена, а тепер вільна
+            if self.state == 'assigned':
+                self.state = 'available'

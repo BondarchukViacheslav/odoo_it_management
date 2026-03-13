@@ -49,6 +49,18 @@
                         </group>
                     </group>
                     <notebook>
+                        <page string="Software &amp; Licenses" name="software">
+                            <field name="software_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="software_type"/>
+                                    <field name="license_type"/>
+                                    <field name="license_required" widget="boolean_toggle"/>
+                                    <field name="license_key"/>
+                                    <field name="expiration_date"/>
+                                </list>
+                            </field>
+                        </page>
                         <page string="Notes" name="notes">
                             <field name="note"/>
                         </page>

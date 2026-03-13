@@ -59,6 +59,12 @@ class BPITEquipmentEquipment(models.Model):
 
     status_log_ids = fields.One2many('bp.it.equipment.status.log', 'equipment_id')
 
+    software_ids = fields.One2many(
+        'bp.it.equipment.software',
+        'equipment_id',
+        string='Installed Software'
+    )
+
     def action_set_available(self):
         """ Sets the equipment status to Available. """
         for record in self:
@@ -82,7 +88,6 @@ class BPITEquipmentEquipment(models.Model):
 
     def write(self, vals):
         for record in self:
-            # 1. ЛОГІКА ІСТОРІЇ СТАТУСІВ (Твій код)
             if 'state' in vals and record.state != vals['state']:
                 self.env['bp.it.equipment.status.log'].create({
                     'equipment_id': record.id,
@@ -92,11 +97,9 @@ class BPITEquipmentEquipment(models.Model):
                     'note': vals.get('note', 'Status change via interface')
                 })
 
-            # 2. ЛОГІКА ПРИЗНАЧЕНЬ (Assignments)
             if 'employee_id' in vals:
                 new_employee_id = vals.get('employee_id')
                 if new_employee_id:
-                    # Створюємо запис про видачу
                     self.env['bp.it.equipment.assignment'].create({
                         'equipment_id': record.id,
                         'employee_id': new_employee_id,
@@ -105,7 +108,6 @@ class BPITEquipmentEquipment(models.Model):
                         'name': f"Auto: {record.name}"
                     })
                 elif record.employee_id:
-                    # Якщо працівника прибрали — закриваємо останнє активне призначення
                     last_assignment = self.env['bp.it.equipment.assignment'].search([
                         ('equipment_id', '=', record.id),
                         ('employee_id', '=', record.employee_id.id),

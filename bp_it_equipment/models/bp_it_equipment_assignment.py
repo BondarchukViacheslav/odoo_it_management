@@ -5,7 +5,7 @@ from odoo.exceptions import ValidationError
 class BPITEquipmentAssignment(models.Model):
     _name = 'bp.it.equipment.assignment'
     _description = 'Equipment Assignment'
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = 'date_start desc'
 
     name = fields.Char(

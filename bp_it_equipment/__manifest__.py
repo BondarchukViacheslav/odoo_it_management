@@ -19,9 +19,8 @@
         'views/bp_it_equipment_equipment_view.xml',
         'views/bp_it_equipment_category_view.xml',
         'views/bp_it_equipment_assignment_view.xml',
+        'views/bp_it_equipment_software_view.xml',
         'views/bp_it_equipment_menu.xml',
-        # 'views/cashflow_master_transaction.xml',
-        # Сюди будемо додавати інші view по мірі створення
         'data/bp_it_equipment_category_data.xml',
     ],
     'demo': [

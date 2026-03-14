@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_bp_it_consumable_user" model="res.groups">
+        <field name="name">User (Consumables)</field>
+        <field name="privilege_id" ref="bp_it_equipment.privilege_bp_it_management"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">User: can view own consumable requests.</field>
+    </record>
+
+    <record id="group_bp_it_consumable_admin" model="res.groups">
+        <field name="name">Administrator (Consumables)</field>
+        <field name="privilege_id" ref="bp_it_equipment.privilege_bp_it_management"/>
+        <field name="implied_ids" eval="[(4, ref('group_bp_it_consumable_user'))]"/>
+        <field name="user_ids" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="comment">Admin: full access to all consumable records and settings.</field>
+    </record>
+
+</odoo>

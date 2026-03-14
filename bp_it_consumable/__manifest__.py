@@ -1,6 +1,6 @@
 {
     'name': 'IT Consumable Management',
-    'version': '19.0.1.0.0',
+    'version': '19.0.2.0.0',
     'category': 'IT Management',
     'summary': 'Облік витратних матеріалів та картриджів відділу IT',
     'sequence': 10,
@@ -14,6 +14,9 @@
         'bp_it_equipment',
     ],
     'data': [
+        'security/bp_it_consumable_groups.xml',
+        'security/bp_it_consumable_rules.xml',
+        'security/ir.model.access.csv',
         # Сюди ми будемо додавати шляхи до файлів security, views, wizards, data тощо.
     ],
     'demo': [

@@ -19,6 +19,14 @@
         'security/ir.model.access.csv',
 
         'views/bp_it_consumable_equipment_view.xml',
+
+        'views/bp_it_consumable_category_view.xml',
+        'views/bp_it_consumable_consumable_view.xml',
+        'views/bp_it_consumable_issue_view.xml',
+        'views/bp_it_consumable_request_view.xml',
+        'views/bp_it_consumable_request_line_view.xml',
+
+        'views/bp_it_consumable_menu.xml',
         # Сюди ми будемо додавати шляхи до файлів security, views, wizards, data тощо.
     ],
     'demo': [

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bp_it_consumable_category_view_list" model="ir.ui.view">
+        <field name="name">bp.it.consumable.category.view.list</field>
+        <field name="model">bp.it.consumable.category</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="bp_it_consumable_category_view_form" model="ir.ui.view">
+        <field name="name">bp.it.consumable.category.view.form</field>
+        <field name="model">bp.it.consumable.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Category Name"/></h1>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="bp_it_consumable_category_action" model="ir.actions.act_window">
+        <field name="name">Consumable Categories</field>
+        <field name="res_model">bp.it.consumable.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

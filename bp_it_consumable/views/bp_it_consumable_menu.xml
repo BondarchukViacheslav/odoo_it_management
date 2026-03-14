@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="bp_it_consumable_menu_root"
+              name="Consumables"
+              web_icon="bp_it_consumable,static/description/icon.png"
+              sequence="15"/>
+
+    <menuitem id="bp_it_consumable_request_menu"
+              name="Supplier Requests"
+              parent="bp_it_consumable_menu_root"
+              action="bp_it_consumable_request_action"
+              sequence="10"/>
+
+    <menuitem id="bp_it_consumable_issue_menu"
+              name="Issue Log"
+              parent="bp_it_consumable_menu_root"
+              action="bp_it_consumable_issue_action"
+              sequence="20"/>
+
+    <menuitem id="bp_it_consumable_integrated_menu"
+              name="Consumables"
+              parent="bp_it_equipment.bp_it_equipment_menu_root"
+              sequence="15"/>
+
+    <menuitem id="bp_it_consumable_integrated_request_menu"
+              name="Supplier Requests"
+              parent="bp_it_consumable_integrated_menu"
+              action="bp_it_consumable_request_action"
+              sequence="10"/>
+
+    <menuitem id="bp_it_consumable_integrated_issue_menu"
+              name="Issue Log"
+              parent="bp_it_consumable_integrated_menu"
+              action="bp_it_consumable_issue_action"
+              sequence="20"/>
+
+    <menuitem id="bp_it_consumable_config_consumables_menu"
+              name="Consumable Catalog"
+              parent="bp_it_equipment.bp_it_equipment_configuration_menu_main"
+              action="bp_it_consumable_consumable_action"
+              sequence="40"/>
+
+    <menuitem id="bp_it_consumable_config_category_menu"
+              name="Consumable Categories"
+              parent="bp_it_equipment.bp_it_equipment_configuration_menu_main"
+              action="bp_it_consumable_category_action"
+              sequence="50"/>
+
+</odoo>

@@ -17,6 +17,8 @@
         'security/bp_it_consumable_groups.xml',
         'security/bp_it_consumable_rules.xml',
         'security/ir.model.access.csv',
+
+        'views/bp_it_consumable_equipment_view.xml',
         # Сюди ми будемо додавати шляхи до файлів security, views, wizards, data тощо.
     ],
     'demo': [

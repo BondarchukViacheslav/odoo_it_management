@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 {
     'name': 'IT Consumable Management',
     'version': '19.0.2.0.0',
@@ -18,6 +28,7 @@
         'security/bp_it_consumable_rules.xml',
         'security/ir.model.access.csv',
 
+        'views/bp_it_consumable_res_partner_view.xml',
         'views/bp_it_consumable_equipment_view.xml',
 
         'views/bp_it_consumable_category_view.xml',
@@ -27,7 +38,10 @@
         'views/bp_it_consumable_request_line_view.xml',
 
         'views/bp_it_consumable_menu.xml',
-        # Сюди ми будемо додавати шляхи до файлів security, views, wizards, data тощо.
+
+        'report/bp_it_consumable_request_report.xml',
+
+        'wizard/bp_it_consumable_request_wizard_view.xml',
     ],
     'demo': [
         # 'data/demo_data.xml',
@@ -39,4 +53,3 @@
         'static/description/icon.png'
     ],
 }
-

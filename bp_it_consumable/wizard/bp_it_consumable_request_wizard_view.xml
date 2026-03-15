@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bp_it_consumable_request_wizard_view_form" model="ir.ui.view">
+        <field name="name">bp.it.consumable.request.wizard.view.form</field>
+        <field name="model">bp.it.consumable.request.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generate Request">
+                <group>
+                    <field name="partner_id" readonly="partner_id != False"/>
+                </group>
+                <footer>
+                    <button name="action_generate_requests" string="Generate" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="bp_it_consumable_request_wizard_action" model="ir.actions.act_window">
+        <field name="name">Generate Requests</field>
+        <field name="res_model">bp.it.consumable.request.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="bp_it_consumable_request_wizard_action_context" model="ir.actions.act_window">
+        <field name="name">Generate Consumable Request</field>
+        <field name="res_model">bp.it.consumable.request.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="base.model_res_partner"/>
+        <field name="binding_view_types">form,list</field>
+    </record>
+
+</odoo>

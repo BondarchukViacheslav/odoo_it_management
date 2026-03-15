@@ -17,6 +17,12 @@
               action="bp_it_consumable_issue_action"
               sequence="20"/>
 
+    <menuitem id="bp_it_consumable_request_wizard_menu"
+          name="Generate Requests"
+          parent="bp_it_consumable_menu_root"
+          action="bp_it_consumable_request_wizard_action"
+          sequence="15"/>
+
     <menuitem id="bp_it_consumable_integrated_menu"
               name="Consumables"
               parent="bp_it_equipment.bp_it_equipment_menu_root"

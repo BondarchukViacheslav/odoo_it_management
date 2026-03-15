@@ -1,7 +1,7 @@
 """
 Main model for IT Consumables.
 """
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class BPITConsumableConsumable(models.Model):
@@ -33,16 +33,53 @@ class BPITConsumableConsumable(models.Model):
         column2='equipment_id'
     )
 
+    # Add One2many relations for correct @api.depends triggering
+    issue_ids = fields.One2many(
+        'bp.it.consumable.issue',
+        'consumable_id',
+        string='Issues'
+    )
+
+    request_line_ids = fields.One2many(
+        'bp.it.consumable.request.line',
+        'consumable_id',
+        string='Request Lines'
+    )
+
     def _compute_display_name(self):
         """Compute the display name for the record."""
         for record in self:
             record.display_name = record.name or self.env._('New Consumable')
 
+    @api.depends('issue_ids.qty', 'request_line_ids.qty', 'request_line_ids.request_id.state')
     def _compute_qty_available(self):
         """
-        Compute available quantity.
-        Will be fully implemented after adding issue and request models.
+        Compute available quantity:
+        Received from suppliers minus Issued to employees/equipment.
         """
         for record in self:
-            # Placeholder: will calculate (Received - Issued) later
-            record.qty_available = 0.0
+            # Calculate total received quantity
+            received_qty = sum(
+                line.qty for line in record.request_line_ids
+                if line.request_id.state == 'received'
+            )
+
+            # Calculate total issued quantity
+            issued_qty = sum(issue.qty for issue in record.issue_ids)
+
+            # Calculate available stock
+            record.qty_available = received_qty - issued_qty
+
+    def action_create_issue(self):
+        """Open a form in a modal window to issue this consumable."""
+        self.ensure_one()
+        return {
+            'name': self.env._('Issue Consumable'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'bp.it.consumable.issue',
+            'view_mode': 'form',
+            'target': 'new',  # Opens the form as a modal dialog
+            'context': {
+                'default_consumable_id': self.id,
+            }
+        }

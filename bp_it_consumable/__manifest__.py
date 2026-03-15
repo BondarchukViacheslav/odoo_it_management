@@ -1,6 +1,6 @@
 {
     'name': 'IT Consumable Management',
-    'version': '19.0.2.0.0',
+    'version': '19.0.9.0.0',
     'category': 'IT Management',
     'summary': 'Облік витратних матеріалів та картриджів відділу IT',
     'sequence': 10,

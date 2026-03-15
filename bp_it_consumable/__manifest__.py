@@ -44,9 +44,7 @@
         'demo/bp_it_consumable_request_demo.xml',
         'demo/bp_it_consumable_request_line_demo.xml',
     ],
-    'installable': True,
     'application': False,
-    'auto_install': False,
     'images': [
         'static/description/icon.png'
     ],

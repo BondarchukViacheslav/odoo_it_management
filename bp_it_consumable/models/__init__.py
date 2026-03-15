@@ -1,3 +1,4 @@
+"""Init file for models."""
 from . import bp_it_consumable_category
 from . import bp_it_consumable_consumable
 from . import bp_it_consumable_issue

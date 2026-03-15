@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 {
     'name': 'IT Consumable Management',
     'version': '19.0.2.0.0',
@@ -24,6 +14,8 @@
         'bp_it_equipment',
     ],
     'data': [
+        'data/bp_it_consumable_sequence.xml',
+
         'security/bp_it_consumable_groups.xml',
         'security/bp_it_consumable_rules.xml',
         'security/ir.model.access.csv',
@@ -37,14 +29,20 @@
         'views/bp_it_consumable_request_view.xml',
         'views/bp_it_consumable_request_line_view.xml',
 
+        'wizard/bp_it_consumable_request_wizard_view.xml',
+
         'views/bp_it_consumable_menu.xml',
 
         'report/bp_it_consumable_request_report.xml',
-
-        'wizard/bp_it_consumable_request_wizard_view.xml',
     ],
     'demo': [
-        # 'data/demo_data.xml',
+        'demo/bp_it_consumable_res_partner_demo.xml',
+        'demo/bp_it_consumable_hr_employee_demo.xml',
+        'demo/bp_it_consumable_category_demo.xml',
+        'demo/bp_it_consumable_consumable_demo.xml',
+        'demo/bp_it_consumable_issue_demo.xml',
+        'demo/bp_it_consumable_request_demo.xml',
+        'demo/bp_it_consumable_request_line_demo.xml',
     ],
     'installable': True,
     'application': False,

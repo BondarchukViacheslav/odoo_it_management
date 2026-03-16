@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 class BPITEquipmentEquipment(models.Model):
     """
-    Main model for tracking IT equipment units.
+    Main model for tracking IT assets like laptops, monitors, and printers.
     Contains technical details, serial numbers, and current status.
     """
     _name = 'bp.it.equipment.equipment'
@@ -59,8 +59,8 @@ class BPITEquipmentEquipment(models.Model):
 
     status_log_ids = fields.One2many('bp.it.equipment.status.log', 'equipment_id')
 
-    software_ids = fields.One2many(
-        'bp.it.equipment.software',
+    software_instance_ids = fields.One2many(
+        'bp.it.equipment.software.instance',
         'equipment_id',
         string='Installed Software'
     )

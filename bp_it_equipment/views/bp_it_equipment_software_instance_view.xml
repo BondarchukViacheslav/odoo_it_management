@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="bp_it_equipment_software_instance_view_list" model="ir.ui.view">
+        <field name="name">bp.it.equipment.software.instance.view.list</field>
+        <field name="model">bp.it.equipment.software.instance</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="license_required and not license_key">
+                <field name="software_id"/>
+                <field name="equipment_id"/>
+                <field name="software_type"/>
+                <field name="license_required"/>
+                <field name="license_key"/>
+                <field name="installation_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="bp_it_equipment_software_instance_action" model="ir.actions.act_window">
+        <field name="name">Installed Software</field>
+        <field name="res_model">bp.it.equipment.software.instance</field>
+        <field name="view_mode">list</field>
+    </record>
+
+</odoo>

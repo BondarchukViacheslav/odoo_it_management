@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="inst_macos_mac" model="bp.it.equipment.software.instance">
+            <field name="software_id" ref="soft_macos"/>
+            <field name="equipment_id" ref="demo_equipment_laptop_1"/>
+            <field name="license_required">False</field>
+        </record>
+
+        <record id="inst_ps_mac" model="bp.it.equipment.software.instance">
+            <field name="software_id" ref="soft_photoshop"/>
+            <field name="equipment_id" ref="demo_equipment_laptop_1"/>
+            <field name="license_required">True</field>
+            <field name="license_key">ADBE-1234-5678-9012</field>
+        </record>
+
+        <record id="inst_office_monitor" model="bp.it.equipment.software.instance">
+            <field name="software_id" ref="soft_office365"/>
+            <field name="equipment_id" ref="demo_equipment_monitor_1"/>
+            <field name="license_required">True</field>
+            <field name="license_key"></field>
+        </record>
+    </data>
+</odoo>

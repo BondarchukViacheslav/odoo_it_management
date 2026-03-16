@@ -27,10 +27,22 @@
               action="bp_it_equipment_category_action"
               sequence="20"/>
 
+
+    <menuitem id="bp_it_equipment_software_menu_main"
+              name="Software"
+              parent="bp_it_equipment_menu_root"
+              sequence="30"/>
+
     <menuitem id="bp_it_equipment_software_menu_list"
               name="Software"
-              parent="bp_it_equipment_configuration_menu_main"
+              parent="bp_it_equipment_software_menu_main"
               action="bp_it_equipment_software_action"
-              sequence="30"/>
+              sequence="10"/>
+
+    <menuitem id="bp_it_equipment_software_instance_menu_list"
+              name="Instance"
+              parent="bp_it_equipment_software_menu_main"
+              action="bp_it_equipment_software_instance_action"
+              sequence="20"/>
 
 </odoo>

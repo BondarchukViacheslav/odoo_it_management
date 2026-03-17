@@ -1,7 +1,7 @@
 """
 Model for IT Consumable Issues (Log).
 """
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class BPITConsumableIssue(models.Model):
@@ -25,6 +25,12 @@ class BPITConsumableIssue(models.Model):
         help="Optional: specific equipment this consumable was used for."
     )
 
+    # Technical field for access to compatible_equipment_ids
+    compatible_equipment_ids = fields.Many2many(
+        related='consumable_id.compatible_equipment_ids',
+        string="Compatible Equipments"
+    )
+
     issue_date = fields.Date(
         default=fields.Date.context_today,
         required=True
@@ -46,3 +52,30 @@ class BPITConsumableIssue(models.Model):
                 )
             else:
                 record.display_name = self.env._('New Issue')
+
+    @api.onchange('consumable_id')
+    def _onchange_consumable_id(self):
+        """
+        Dynamically restrict the equipment_id domain based on the selected consumable.
+        Clear the equipment_id if it is no longer compatible.
+        """
+        self.ensure_one()
+
+        if self.compatible_equipment_ids:
+            # Clear equipment_id if the previously selected equipment is not compatible anymore
+            if self.equipment_id and self.equipment_id not in self.compatible_equipment_ids:
+                self.equipment_id = False
+        #
+        #     # Restrict the selection to only compatible equipment
+        #     return {
+        #         'domain': {
+        #             'equipment_id': [('id', 'in', self.consumable_id.compatible_equipment_ids.ids)]
+        #         }
+        #     }
+        # else:
+        #     # If compatible_equipment_ids is empty, allow all equipment
+        #     return {
+        #         'domain': {
+        #             'equipment_id': []
+        #         }
+        #     }

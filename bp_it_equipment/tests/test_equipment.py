@@ -37,11 +37,17 @@ class TestITEquipment(TransactionCase):
             'state': 'active'
         })
 
-        wizard = self.env['hr.employee.return.wizard'].with_context(active_id=self.employee.id).create({
+        wizard_env = self.env['hr.employee.return.wizard'].with_context(
+            active_id=self.employee.id
+        )
+        wizard = wizard_env.create({
             'employee_id': self.employee.id,
         })
 
-        self.assertTrue(len(wizard.line_ids) > 0, "Wizard should pre-fill lines from active assignments")
+        self.assertTrue(
+            len(wizard.line_ids) > 0,
+            "Wizard should pre-fill lines from active assignments"
+        )
 
         wizard.line_ids[0].condition = 'scrapped'
 

@@ -1,4 +1,4 @@
-from odoo import models, fields, api, _
+from odoo import models, fields, _
 from odoo.exceptions import ValidationError
 
 
@@ -66,11 +66,6 @@ class BPITEquipmentAssignment(models.Model):
                     (record.equipment_id.name, record.equipment_id.state)
                 )
 
-            # if record.equipment_id.state != 'available':
-            #     raise ValidationError(
-            #         _("Equipment %s is already assigned or in repair!") % record.equipment_id.name
-            #     )
-            #
             record.equipment_id.write({
                 'state': 'assigned',
                 'employee_id': record.employee_id.id

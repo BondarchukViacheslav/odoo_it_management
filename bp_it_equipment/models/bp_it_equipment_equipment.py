@@ -42,7 +42,10 @@ class BPITEquipmentEquipment(models.Model):
 
     note = fields.Text(string='Internal Notes')
 
-    active = fields.Boolean(default=True, help="Set to False to hide the record without deleting it.")
+    active = fields.Boolean(
+        default=True,
+        help="Set to False to hide the record without deleting it."
+    )
 
     category_id = fields.Many2one(
         'bp.it.equipment.category',
@@ -78,6 +81,9 @@ class BPITEquipmentEquipment(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
+        """
+        Override create to automatically generate the first status log entry.
+        """
         records = super().create(vals_list)
         for record in records:
             self.env['bp.it.equipment.status.log'].create({
@@ -88,6 +94,9 @@ class BPITEquipmentEquipment(models.Model):
         return records
 
     def write(self, vals):
+        """
+        Override write to detect state changes and log them for history tracking.
+        """
         for record in self:
             if 'state' in vals and record.state != vals['state']:
                 self.env['bp.it.equipment.status.log'].create({

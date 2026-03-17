@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
-        <record id="log_printer_repair" model="bp.it.equipment.status.log">
-            <field name="equipment_id" ref="demo_equipment_printer_1"/>
-            <field name="old_state">available</field>
-            <field name="new_state">repair</field>
-            <field name="user_id" ref="base.user_admin"/>
-            <field name="change_date" eval="time.strftime('%Y-03-01 09:00:00')"/>
-        </record>
+<odoo noupdate="1">
+    <record id="log_printer_repair" model="bp.it.equipment.status.log">
+        <field name="equipment_id" ref="demo_equipment_printer_1"/>
+        <field name="old_state">available</field>
+        <field name="new_state">repair</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="change_date" eval="time.strftime('%Y-03-01 09:00:00')"/>
+    </record>
 
-        <record id="log_mac_new" model="bp.it.equipment.status.log">
-            <field name="equipment_id" ref="demo_equipment_laptop_1"/>
-            <field name="old_state">draft</field>
-            <field name="new_state">available</field>
-            <field name="user_id" ref="base.user_admin"/>
-            <field name="change_date" eval="time.strftime('%Y-01-10 12:00:00')"/>
-        </record>
+    <record id="log_mac_new" model="bp.it.equipment.status.log">
+        <field name="equipment_id" ref="demo_equipment_laptop_1"/>
+        <field name="old_state">draft</field>
+        <field name="new_state">available</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="change_date" eval="time.strftime('%Y-01-10 12:00:00')"/>
+    </record>
 
-        <record id="log_monitor_assign" model="bp.it.equipment.status.log">
-            <field name="equipment_id" ref="demo_equipment_monitor_1"/>
-            <field name="old_state">available</field>
-            <field name="new_state">assigned</field>
-            <field name="user_id" ref="base.user_admin"/>
-            <field name="change_date" eval="time.strftime('%Y-02-15 14:30:00')"/>
-        </record>
-    </data>
+    <record id="log_monitor_assign" model="bp.it.equipment.status.log">
+        <field name="equipment_id" ref="demo_equipment_monitor_1"/>
+        <field name="old_state">available</field>
+        <field name="new_state">assigned</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="change_date" eval="time.strftime('%Y-02-15 14:30:00')"/>
+    </record>
 </odoo>

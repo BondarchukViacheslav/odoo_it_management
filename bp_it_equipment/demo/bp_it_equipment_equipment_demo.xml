@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
-        <record id="demo_equipment_laptop_1" model="bp.it.equipment.equipment">
-            <field name="name">MacBook Pro 14 M3</field>
-            <field name="category_id" ref="cat_laptop"/>
-            <field name="serial_number">SN-APPLE-882299</field>
-            <field name="inventory_number">INV/IT/2026/001</field>
-            <field name="state">available</field>
-        </record>
+<odoo noupdate="1">
+    <record id="demo_equipment_laptop_1" model="bp.it.equipment.equipment">
+        <field name="name">MacBook Pro 14 M3</field>
+        <field name="category_id" ref="cat_laptop"/>
+        <field name="serial_number">SN-APPLE-882299</field>
+        <field name="inventory_number">INV/IT/2026/001</field>
+        <field name="state">available</field>
+    </record>
 
-        <record id="demo_equipment_monitor_1" model="bp.it.equipment.equipment">
-            <field name="name">Dell UltraSharp 27"</field>
-            <field name="category_id" ref="cat_monitor"/>
-            <field name="serial_number">SN-DELL-554433</field>
-            <field name="inventory_number">INV/IT/2026/042</field>
-            <field name="state">assigned</field>
-            <field name="employee_id" model="hr.employee" search="[('user_id', '=', ref('base.user_admin'))]"/>
-        </record>
+    <record id="demo_equipment_monitor_1" model="bp.it.equipment.equipment">
+        <field name="name">Dell UltraSharp 27"</field>
+        <field name="category_id" ref="cat_monitor"/>
+        <field name="serial_number">SN-DELL-554433</field>
+        <field name="inventory_number">INV/IT/2026/042</field>
+        <field name="state">assigned</field>
+        <field name="employee_id" model="hr.employee" search="[('user_id', '=', ref('base.user_admin'))]"/>
+    </record>
 
-        <record id="demo_equipment_printer_1" model="bp.it.equipment.equipment">
-            <field name="name">HP LaserJet Pro M404n</field>
-            <field name="category_id" ref="cat_printer"/>
-            <field name="serial_number">SN-HP-990011</field>
-            <field name="inventory_number">INV/IT/2026/099</field>
-            <field name="state">repair</field>
-        </record>
-    </data>
+    <record id="demo_equipment_printer_1" model="bp.it.equipment.equipment">
+        <field name="name">HP LaserJet Pro M404n</field>
+        <field name="category_id" ref="cat_printer"/>
+        <field name="serial_number">SN-HP-990011</field>
+        <field name="inventory_number">INV/IT/2026/099</field>
+        <field name="state">repair</field>
+    </record>
 </odoo>

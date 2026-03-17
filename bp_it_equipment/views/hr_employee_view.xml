@@ -10,7 +10,8 @@
                         string="Return All Equipment"
                         type="action"
                         class="oe_highlight"
-                        help="Click to return all assigned IT equipment back to stock"/>
+                        help="Click to return all assigned IT equipment back to stock"
+                        invisible="not equipment_ids"/>
             </xpath>
             <xpath expr="//notebook" position="inside">
                 <page string="IT Equipment" name="it_equipment">

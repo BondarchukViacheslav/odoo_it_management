@@ -22,7 +22,11 @@
         'views/bp_it_equipment_software_view.xml',
         'views/bp_it_equipment_software_instance_view.xml',
         'views/bp_it_equipment_menu.xml',
+        'wizard/hr_employee_return_wizard.view.xml',
+        'views/hr_employee_view.xml',
         'data/bp_it_equipment_category_data.xml',
+        'report/hr_employee_reports.xml',
+        'report/hr_employee_equipment_template.xml',
     ],
     'demo': [
         'demo/bp_it_equipment_equipment_demo.xml',

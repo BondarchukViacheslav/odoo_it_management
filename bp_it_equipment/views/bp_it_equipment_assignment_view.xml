@@ -7,15 +7,19 @@
         <field name="arch" type="xml">
             <list string="Assignments" decoration-info="state == 'draft'" decoration-success="state == 'active'"
                   decoration-muted="state == 'returned'">
-                <field name="name"/>
+                <field name="name" string="ID"/>
                 <field name="equipment_id"/>
                 <field name="employee_id" widget="many2one_avatar_user"/>
                 <field name="date_start"/>
-                <field name="date_end"/>
+                <field name="date_end" optional="show"/>
                 <field name="state" widget="badge"
                        decoration-info="state == 'draft'"
                        decoration-success="state == 'active'"
                        decoration-muted="state == 'returned'"/>
+                <field name="equipment_state"
+                       widget="badge"
+                       decoration-danger="equipment_state == 'damaged'"
+                       decoration-warning="equipment_state == 'in_repair'"/>
             </list>
         </field>
     </record>
@@ -84,6 +88,10 @@
         <field name="res_model">bp.it.equipment.assignment</field>
         <field name="view_mode">list,form</field>
         <field name="search_view_id" ref="bp_it_equipment_assignment_view_search"/>
-        <field name="context">{'search_default_group_by_state': 1}</field>
+        <field name="context">{
+            'search_default_filter_active': 1
+            'search_default_group_by_employee': 1
+            }
+        </field>
     </record>
 </odoo>

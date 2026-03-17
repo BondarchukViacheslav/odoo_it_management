@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
     <record id="privilege_bp_it_management" model="res.groups.privilege">

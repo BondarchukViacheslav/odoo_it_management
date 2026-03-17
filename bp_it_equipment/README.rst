@@ -11,4 +11,4 @@ Key Features:
 
 Installation:
 -------------
-Standard Odoo module installation process. Requires 'base' and 'mail' modules.
+Standard Odoo module installation process. Requires 'base', 'mail' and 'hr' modules.

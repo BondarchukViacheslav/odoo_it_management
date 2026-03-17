@@ -51,9 +51,10 @@ class BPITEquipmentEquipment(models.Model):
     )
 
     employee_id = fields.Many2one(
-        'res.users',
+        'hr.employee',
         string='Assigned To',
         tracking=True,
+        readonly=True,
         help="Current user of this equipment"
     )
 
@@ -97,44 +98,21 @@ class BPITEquipmentEquipment(models.Model):
                     'note': vals.get('note', 'Status change via interface')
                 })
 
-            if 'employee_id' in vals:
-                new_employee_id = vals.get('employee_id')
-                if new_employee_id:
-                    self.env['bp.it.equipment.assignment'].create({
-                        'equipment_id': record.id,
-                        'employee_id': new_employee_id,
-                        'date_start': fields.Date.today(),
-                        'state': 'active',
-                        'name': f"Auto: {record.name}"
-                    })
-                elif record.employee_id:
-                    last_assignment = self.env['bp.it.equipment.assignment'].search([
-                        ('equipment_id', '=', record.id),
-                        ('employee_id', '=', record.employee_id.id),
-                        ('state', '=', 'active')
-                    ], limit=1)
-                    if last_assignment:
-                        last_assignment.state = 'returned'
-                        last_assignment.date_end = fields.Date.today()
-
         return super().write(vals)
 
     @api.model
     def _read_group_state(self, *args, **kwargs):
-        # Отримуємо всі ключі з нашого Selection поля 'state'
-        # ВАЖЛИВО: перетворюємо на список (list), щоб Odoo зрозуміла результат
         state_list = [key for key, val in self._fields['state'].selection]
         return state_list
 
     @api.onchange('employee_id')
     def _onchange_employee_id(self):
         """
-        Якщо ми обираємо працівника, статус автоматично стає 'Assigned'.
-        Якщо прибираємо працівника — повертається в 'Available'.
+        If an employee is selected, the status automatically changes to 'Assigned'.
+        If the employee is removed, it reverts to 'Available'.
         """
         if self.employee_id:
             self.state = 'assigned'
         else:
-            # Якщо техніка була призначена, а тепер вільна
             if self.state == 'assigned':
                 self.state = 'available'

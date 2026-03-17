@@ -18,13 +18,14 @@ class BPITEquipmentAssignment(models.Model):
         'bp.it.equipment.equipment',
         string='Equipment',
         required=True,
-        tracking=True
+        tracking=True,
+        domain="[('state', 'in', ('available', 'new'))]"
     )
     employee_id = fields.Many2one(
-        'res.users',
+        'hr.employee',
         string='Employee',
         required=True,
-        default=lambda self: self.env.user)
+        default=lambda self: self.env.user.employee_id)
 
     date_start = fields.Date(
         string='Start Date',
@@ -39,16 +40,46 @@ class BPITEquipmentAssignment(models.Model):
         ('returned', 'Returned'),
     ], string='Status', default='draft', tracking=True)
 
+    equipment_state = fields.Selection(
+        related='equipment_id.state',
+        string="Equipment Status",
+        readonly=True
+    )
+
+    _sql_constraints = [
+        ('unique_active_equipment',
+         'unique(equipment_id, state)',
+         'This equipment is already assigned!')
+    ]
+
     def action_confirm(self):
         for record in self:
-            if record.equipment_id.state != 'available':
+            if record.equipment_id.employee_id:
                 raise ValidationError(
-                    _("This equipment is not available for assignment! Current status: %s") % record.equipment_id.state)
+                    _("Equipment %s is still assigned to %s. Please return it first!") %
+                    (record.equipment_id.name, record.equipment_id.employee_id.name)
+                )
 
-            record.equipment_id.state = 'assigned'
-            record.equipment_id.employee_id = record.employee_id
-            record.state = 'active'
-            record.name = f"{record.equipment_id.name} -> {record.employee_id.name}"
+            if record.equipment_id.state in ['repair', 'damaged']:
+                raise ValidationError(
+                    _("Equipment %s is %s and cannot be assigned.") %
+                    (record.equipment_id.name, record.equipment_id.state)
+                )
+
+            # if record.equipment_id.state != 'available':
+            #     raise ValidationError(
+            #         _("Equipment %s is already assigned or in repair!") % record.equipment_id.name
+            #     )
+            #
+            record.equipment_id.write({
+                'state': 'assigned',
+                'employee_id': record.employee_id.id
+            })
+
+            record.write({
+                'state': 'active',
+                'name': f"{record.equipment_id.name} -> {record.employee_id.name}"
+            })
 
     def action_return(self):
         for record in self:

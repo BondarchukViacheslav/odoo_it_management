@@ -52,4 +52,10 @@
               action="bp_it_consumable_category_action"
               sequence="50"/>
 
+    <menuitem id="bp_it_consumable_config_supplier_menu"
+              name="Suppliers"
+              parent="bp_it_equipment.bp_it_equipment_configuration_menu_main"
+              action="bp_it_consumable_res_partner_action"
+              sequence="60"/>
+
 </odoo>

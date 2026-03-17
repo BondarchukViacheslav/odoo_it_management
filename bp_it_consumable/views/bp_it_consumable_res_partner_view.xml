@@ -10,4 +10,12 @@
             </xpath>
         </field>
     </record>
+
+    <record id="bp_it_consumable_res_partner_action" model="ir.actions.act_window">
+        <field name="name">Suppliers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_consumable_supplier', '=', True)]</field>
+        <field name="context">{'default_is_consumable_supplier': True, 'default_is_company': True}</field>
+    </record>
 </odoo>

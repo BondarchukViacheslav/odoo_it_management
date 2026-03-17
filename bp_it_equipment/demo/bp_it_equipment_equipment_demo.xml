@@ -24,4 +24,29 @@
         <field name="inventory_number">INV/IT/2026/099</field>
         <field name="state">repair</field>
     </record>
+
+    <record id="demo_equipment_printer_2" model="bp.it.equipment.equipment">
+        <field name="name">HP LaserJet 1320dn</field>
+        <field name="category_id" ref="cat_printer"/>
+        <field name="serial_number">SN-HP-990012</field>
+        <field name="inventory_number">INV/IT/2026/092</field>
+        <field name="state">available</field>
+    </record>
+
+    <record id="demo_equipment_printer_3" model="bp.it.equipment.equipment">
+        <field name="name">HP LaserJet P2015dn</field>
+        <field name="category_id" ref="cat_printer"/>
+        <field name="serial_number">SN-HP-990013</field>
+        <field name="inventory_number">INV/IT/2026/093</field>
+        <field name="state">available</field>
+    </record>
+
+    <record id="demo_equipment_printer_4" model="bp.it.equipment.equipment">
+        <field name="name">Canon 1238dn</field>
+        <field name="category_id" ref="cat_printer"/>
+        <field name="serial_number">SN-CN-990014</field>
+        <field name="inventory_number">INV/IT/2026/094</field>
+        <field name="state">available</field>
+    </record>
+
 </odoo>

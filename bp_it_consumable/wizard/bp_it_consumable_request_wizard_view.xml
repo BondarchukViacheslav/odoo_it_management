@@ -6,7 +6,8 @@
         <field name="arch" type="xml">
             <form string="Generate Request">
                 <group>
-                    <field name="partner_id" readonly="partner_id != False"/>
+                    <field name="partner_id" readonly="partner_id != False" force_save="1"/>
+                    <field name="category_ids" widget="many2many_tags" options="{'no_create': True}"/>
                 </group>
                 <footer>
                     <button name="action_generate_requests" string="Generate" type="object" class="btn-primary"/>

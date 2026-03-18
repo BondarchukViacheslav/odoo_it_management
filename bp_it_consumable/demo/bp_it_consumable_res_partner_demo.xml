@@ -4,16 +4,21 @@
         <record id="demo_partner_supplier_1" model="res.partner">
             <field name="name">IT Supplies Co.</field>
             <field name="is_consumable_supplier" eval="True"/>
+            <field name="consumable_category_ids" eval="[(6, 0, [ref('demo_category_toner'), ref('demo_category_cables')])]"/>
             <field name="city">Kyiv</field>
         </record>
+
         <record id="demo_partner_supplier_2" model="res.partner">
             <field name="name">TechStore LLC</field>
             <field name="is_consumable_supplier" eval="True"/>
+            <field name="consumable_category_ids" eval="[(6, 0, [ref('demo_category_peripherals'), ref('demo_category_cables')])]"/>
             <field name="city">Lviv</field>
         </record>
+
         <record id="demo_partner_supplier_3" model="res.partner">
             <field name="name">Office Depot Ukraine</field>
             <field name="is_consumable_supplier" eval="True"/>
+            <field name="consumable_category_ids" eval="[(6, 0, [ref('demo_category_toner'), ref('demo_category_peripherals')])]"/>
             <field name="city">Odesa</field>
         </record>
     </data>

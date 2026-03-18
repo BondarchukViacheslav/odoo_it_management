@@ -6,6 +6,12 @@
               web_icon="bp_it_consumable,static/description/icon.png"
               sequence="15"/>
 
+    <menuitem id="bp_it_consumable_consumables_menu"
+              name="Consumable Catalog"
+              parent="bp_it_consumable_menu_root"
+              action="bp_it_consumable_consumable_action"
+              sequence="5"/>
+
     <menuitem id="bp_it_consumable_request_menu"
               name="Supplier Requests"
               parent="bp_it_consumable_menu_root"

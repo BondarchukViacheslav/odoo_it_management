@@ -2,6 +2,8 @@
 Model for IT Consumable Supplier Requests (Header).
 """
 from odoo import models, fields, api
+from odoo.fields import Command
+from odoo.exceptions import UserError
 
 
 class BPITConsumableRequest(models.Model):
@@ -64,3 +66,57 @@ class BPITConsumableRequest(models.Model):
     def action_mark_received(self):
         for record in self:
             record.state = 'received'
+
+    @api.model
+    def _get_restock_line_commands(self, category_ids=None, consumable_ids=None):
+        """
+        Universal method: generates commands (Command.create) for items
+        requiring restocking.
+        """
+        domain = []
+
+        # Filter by provided categories
+        if category_ids:
+            domain.append(('category_id', 'in', category_ids.ids))
+
+        # Filter by specific consumables (e.g., selected from the list view)
+        if consumable_ids:
+            domain.append(('id', 'in', consumable_ids.ids))
+
+        # Search consumables and filter those with low stock
+        consumables = self.env['bp.it.consumable.consumable'].search(domain)
+        low_stock_items = consumables.filtered(
+            lambda c: c.qty_available <= c.qty_min
+        )
+
+        if not low_stock_items:
+            raise UserError(
+                self.env._("No consumables require restocking at this moment.")
+            )
+
+        # Build the list of commands
+        commands = []
+        for item in low_stock_items:
+            qty_to_order = item.qty_order if item.qty_order > 0 else 1.0
+            commands.append(Command.create({
+                'consumable_id': item.id,
+                'qty': qty_to_order,
+            }))
+
+        return commands
+
+    def action_repopulate_lines(self):
+        """Clear existing lines and populate them based on supplier's categories."""
+        self.ensure_one()
+
+        if self.state != 'draft':
+            raise UserError(
+                self.env._("You can only repopulate lines for a draft request.")
+            )
+
+        # Call the universal method to get new lines
+        categories = self.partner_id.consumable_category_ids
+        new_line_commands = self._get_restock_line_commands(category_ids=categories)
+
+        # Add Command.clear() to remove old lines before creating new ones
+        self.line_ids = [Command.clear()] + new_line_commands

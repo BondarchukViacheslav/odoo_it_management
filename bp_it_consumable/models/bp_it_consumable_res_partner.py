@@ -12,3 +12,8 @@ class ResPartner(models.Model):
         default=False,
         help="Check this box if this partner supplies IT consumables."
     )
+
+    consumable_category_ids = fields.Many2many(
+        'bp.it.consumable.category',
+        string="Supplied Categories"
+    )

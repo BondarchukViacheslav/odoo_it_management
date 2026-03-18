@@ -2,6 +2,7 @@
 Wizard model for automating consumable requests.
 """
 from odoo import models, fields, api
+from odoo.fields import Command
 from odoo.exceptions import UserError
 
 
@@ -17,6 +18,19 @@ class BPITConsumableRequestWizard(models.TransientModel):
         help="Select the supplier for the generated request."
     )
 
+    category_ids = fields.Many2many(
+        'bp.it.consumable.category',
+        string="Categories to Order"
+    )
+
+    @api.onchange('partner_id')
+    def _onchange_partner_id(self):
+        """Auto-fill categories based on the selected supplier."""
+        if self.partner_id:
+            self.category_ids = self.partner_id.consumable_category_ids
+        else:
+            self.category_ids = False
+
     @api.model
     def default_get(self, fields_list):
         """Override default_get to handle context actions."""
@@ -24,9 +38,12 @@ class BPITConsumableRequestWizard(models.TransientModel):
         active_model = self.env.context.get('active_model')
         active_id = self.env.context.get('active_id')
 
-        # Automatically set partner if called from partner context action
         if active_model == 'res.partner' and active_id:
             res['partner_id'] = active_id
+            # If a partner is selected, we immediately pull up his categories
+            partner = self.env['res.partner'].browse(active_id)
+            if partner.consumable_category_ids:
+                res['category_ids'] = [Command.set(partner.consumable_category_ids.ids)]
 
         return res
 
@@ -39,35 +56,28 @@ class BPITConsumableRequestWizard(models.TransientModel):
         """Generate supplier request for consumables with low stock."""
         self.ensure_one()
 
-        # Find all consumables and filter those that reached the minimum stock
-        consumables = self.env['bp.it.consumable.consumable'].search([])
-        low_stock_items = consumables.filtered(
-            lambda c: c.qty_available <= c.qty_min
+        active_ids = self.env.context.get('active_ids', [])
+        active_model = self.env.context.get('active_model')
+
+        # Determine if the wizard was called from selected consumables
+        consumable_ids = None
+        if active_model == 'bp.it.consumable.consumable' and active_ids:
+            consumable_ids = self.env['bp.it.consumable.consumable'].browse(active_ids)
+
+        # Call the Request model to get the prepared line commands
+        request_model = self.env['bp.it.consumable.request']
+        new_line_commands = request_model._get_restock_line_commands(
+            category_ids=self.category_ids,
+            consumable_ids=consumable_ids
         )
 
-        # If there are no items to order, notify the user
-        if not low_stock_items:
-            raise UserError(
-                self.env._("No consumables require restocking at this moment.")
-            )
-
-        # Create the request header
-        request_vals = {
+        # Create the Request with lines in a single transaction
+        new_request = request_model.create({
             'partner_id': self.partner_id.id,
-        }
-        new_request = self.env['bp.it.consumable.request'].create(request_vals)
+            'line_ids': new_line_commands,
+        })
 
-        # Create request lines for each low stock item
-        for item in low_stock_items:
-            qty_to_order = item.qty_order if item.qty_order > 0 else 1.0
-
-            self.env['bp.it.consumable.request.line'].create({
-                'request_id': new_request.id,
-                'consumable_id': item.id,
-                'qty': qty_to_order,
-            })
-
-        # Return an action to open the created request
+        # Return an action to open the newly created request
         return {
             'name': self.env._("Generated Request"),
             'type': 'ir.actions.act_window',

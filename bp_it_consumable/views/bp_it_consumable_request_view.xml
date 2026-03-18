@@ -42,6 +42,12 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+                    <button name="action_repopulate_lines"
+                            string="Auto-Fill Lines"
+                            type="object"
+                            invisible="state != 'draft'"
+                            icon="fa-refresh"/>
+
                     <button name="action_mark_ordered" string="Confirm Order" type="object" class="oe_highlight" invisible="state != 'draft'"/>
                     <button name="action_mark_received" string="Receive Products" type="object" class="oe_highlight" invisible="state != 'ordered'"/>
 

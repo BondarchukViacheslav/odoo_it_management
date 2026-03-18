@@ -37,9 +37,25 @@
         </field>
     </record>
 
+    <record id="bp_it_consumable_issue_view_pivot" model="ir.ui.view">
+        <field name="name">bp.it.consumable.issue.view.pivot</field>
+        <field name="model">bp.it.consumable.issue</field>
+        <field name="arch" type="xml">
+            <pivot string="Consumable Issues Analysis" sample="1">
+                <field name="equipment_id" type="row"/>
+                <field name="employee_id" type="row"/>
+                <field name="consumable_id" type="row"/>
+
+                <field name="issue_date" type="col" interval="month"/>
+
+                <field name="qty" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
     <record id="bp_it_consumable_issue_action" model="ir.actions.act_window">
         <field name="name">Issue Log</field>
         <field name="res_model">bp.it.consumable.issue</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">list,pivot,form</field>
     </record>
 </odoo>

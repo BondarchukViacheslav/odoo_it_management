@@ -56,3 +56,11 @@ class BPITConsumableRequest(models.Model):
                     'bp.it.consumable.request.sequence'
                 ) or self.env._('New')
         return super().create(vals_list)
+
+    def action_mark_ordered(self):
+        for record in self:
+            record.state = 'ordered'
+
+    def action_mark_received(self):
+        for record in self:
+            record.state = 'received'

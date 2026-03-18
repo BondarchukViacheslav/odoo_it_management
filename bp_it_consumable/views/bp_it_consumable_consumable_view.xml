@@ -5,6 +5,14 @@
         <field name="model">bp.it.consumable.consumable</field>
         <field name="arch" type="xml">
             <list decoration-danger="qty_available &lt;= qty_min">
+                <header>
+                    <button name="%(bp_it_consumable.bp_it_consumable_request_wizard_action)d"
+                            string="Generate Requests"
+                            type="action"
+                            class="btn-primary"
+                            display="always"/>
+                </header>
+
                 <field name="name"/>
                 <field name="category_id"/>
                 <field name="qty_available"/>

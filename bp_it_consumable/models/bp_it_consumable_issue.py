@@ -65,17 +65,3 @@ class BPITConsumableIssue(models.Model):
             # Clear equipment_id if the previously selected equipment is not compatible anymore
             if self.equipment_id and self.equipment_id not in self.compatible_equipment_ids:
                 self.equipment_id = False
-        #
-        #     # Restrict the selection to only compatible equipment
-        #     return {
-        #         'domain': {
-        #             'equipment_id': [('id', 'in', self.consumable_id.compatible_equipment_ids.ids)]
-        #         }
-        #     }
-        # else:
-        #     # If compatible_equipment_ids is empty, allow all equipment
-        #     return {
-        #         'domain': {
-        #             'equipment_id': []
-        #         }
-        #     }

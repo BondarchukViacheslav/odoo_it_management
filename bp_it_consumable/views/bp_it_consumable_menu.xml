@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!--Consumable Menu-->
     <menuitem id="bp_it_consumable_menu_root"
               name="Consumables"
               web_icon="bp_it_consumable,static/description/icon.png"
@@ -21,30 +22,54 @@
           name="Generate Requests"
           parent="bp_it_consumable_menu_root"
           action="bp_it_consumable_request_wizard_action"
-          sequence="15"/>
+          sequence="30"/>
 
+    <menuitem id="bp_it_consumable_configuration_menu"
+              name="Configuration"
+              parent="bp_it_consumable_menu_root"
+              sequence="40"/>
+
+    <menuitem id="bp_it_consumable_configuration_category_menu"
+              name="Categories"
+              parent="bp_it_consumable_configuration_menu"
+              action="bp_it_consumable_category_action"
+              sequence="50"/>
+
+    <menuitem id="bp_it_consumable_configuration_supplier_menu"
+              name="Suppliers"
+              parent="bp_it_consumable_configuration_menu"
+              action="bp_it_consumable_res_partner_action"
+              sequence="60"/>
+
+    <!--Tt Equipment Integrated Menu-->
     <menuitem id="bp_it_consumable_integrated_menu"
               name="Consumables"
               parent="bp_it_equipment.bp_it_equipment_menu_root"
               sequence="15"/>
 
+    <menuitem id="bp_it_consumable_integrated_consumables_menu"
+              name="Consumable Catalog"
+              parent="bp_it_consumable_integrated_menu"
+              action="bp_it_consumable_consumable_action"
+              sequence="10"/>
+
     <menuitem id="bp_it_consumable_integrated_request_menu"
               name="Supplier Requests"
               parent="bp_it_consumable_integrated_menu"
               action="bp_it_consumable_request_action"
-              sequence="10"/>
+              sequence="20"/>
 
     <menuitem id="bp_it_consumable_integrated_issue_menu"
               name="Issue Log"
               parent="bp_it_consumable_integrated_menu"
               action="bp_it_consumable_issue_action"
-              sequence="20"/>
+              sequence="30"/>
 
-    <menuitem id="bp_it_consumable_config_consumables_menu"
-              name="Consumable Catalog"
-              parent="bp_it_equipment.bp_it_equipment_configuration_menu_main"
-              action="bp_it_consumable_consumable_action"
-              sequence="40"/>
+    <menuitem id="bp_it_consumable_integrated_request_wizard_menu"
+          name="Generate Requests"
+          parent="bp_it_consumable_integrated_menu"
+          action="bp_it_consumable_request_wizard_action"
+          sequence="40"/>
 
     <menuitem id="bp_it_consumable_config_category_menu"
               name="Consumable Categories"
@@ -53,7 +78,7 @@
               sequence="50"/>
 
     <menuitem id="bp_it_consumable_config_supplier_menu"
-              name="Suppliers"
+              name="Consumable Suppliers"
               parent="bp_it_equipment.bp_it_equipment_configuration_menu_main"
               action="bp_it_consumable_res_partner_action"
               sequence="60"/>

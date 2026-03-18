@@ -23,7 +23,7 @@
         <field name="target">new</field>
     </record>
 
-    <record id="bp_it_consumable_request_wizard_action_context" model="ir.actions.act_window">
+    <record id="bp_it_consumable_request_wizard_action_res_partner" model="ir.actions.act_window">
         <field name="name">Generate Consumable Request</field>
         <field name="res_model">bp.it.consumable.request.wizard</field>
         <field name="view_mode">form</field>
@@ -32,4 +32,21 @@
         <field name="binding_view_types">form,list</field>
     </record>
 
+    <record id="bp_it_consumable_request_wizard_action_consumable" model="ir.actions.act_window">
+        <field name="name">Generate Consumable Request</field>
+        <field name="res_model">bp.it.consumable.request.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_bp_it_consumable_consumable"/>
+        <field name="binding_view_types">list,kanban,form</field>
+    </record>
+
+    <record id="bp_it_consumable_request_wizard_action_consumable_request" model="ir.actions.act_window">
+        <field name="name">Generate Consumable Request</field>
+        <field name="res_model">bp.it.consumable.request.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_bp_it_consumable_request"/>
+        <field name="binding_view_types">list</field>
+    </record>
 </odoo>

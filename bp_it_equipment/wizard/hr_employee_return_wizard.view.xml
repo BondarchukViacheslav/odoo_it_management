@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_employee_return_wizard_view_form" model="ir.ui.view">
+        <field name="name">hr.employee.return.wizard.view.form</field>
+        <field name="model">hr.employee.return.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Employee Offboarding: Return Equipment">
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Equipment List" name="equipment_list">
+                            <field name="line_ids">
+                                <list editable="bottom" create="false" delete="false">
+                                    <field name="assignment_id" column_invisible="True"/>
+                                    <field name="equipment_id" readonly="1"/>
+                                    <field name="condition"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <footer>
+                    <button name="action_confirm" string="Process All Returns" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_employee_return_wizard_action" model="ir.actions.act_window">
+        <field name="name">Return All Equipment</field>
+        <field name="res_model">hr.employee.return.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

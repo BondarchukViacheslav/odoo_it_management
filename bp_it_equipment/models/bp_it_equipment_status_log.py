@@ -1,10 +1,10 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class BPITEquipmentStatusLog(models.Model):
     _name = 'bp.it.equipment.status.log'
     _description = 'Equipment Status Log'
-    _order = 'date desc'
+    _order = 'change_date desc'
 
     equipment_id = fields.Many2one(
         'bp.it.equipment.equipment',
@@ -30,7 +30,7 @@ class BPITEquipmentStatusLog(models.Model):
         string='Changed By',
         default=lambda self: self.env.user)
 
-    date = fields.Datetime(
+    change_date = fields.Datetime(
         string='Change Date',
         default=fields.Datetime.now
     )

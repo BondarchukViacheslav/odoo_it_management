@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_employee_equipment_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+
+                        <h2 class="text-center">Equipment Handover Report</h2>
+                        <br/>
+
+                        <div class="row mt32 mb32">
+                            <div class="col-6">
+                                <strong>Employee:</strong>
+                                <span t-field="o.name"/>
+                                <br/>
+                                <strong>Department:</strong>
+                                <span t-field="o.department_id.name"/>
+                                <br/>
+                                <strong>Job Position:</strong>
+                                <span t-field="o.job_id.name"/>
+                            </div>
+                            <div class="col-6 text-right">
+                                <strong>Date:</strong>
+                                <span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')"/>
+                            </div>
+                        </div>
+
+                        <h4>Assigned IT Equipment</h4>
+                        <table class="table table-sm o_main_table mt-4">
+                            <thead>
+                                <tr>
+                                    <th>Equipment Name</th>
+                                    <th>Serial Number</th>
+                                    <th>Category</th>
+                                    <th>State</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.equipment_ids" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <span t-field="line.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.equipment_id.serial_number"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.equipment_id.category_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.state"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <p t-if="not o.equipment_ids" class="text-muted">
+                            No equipment assigned to this employee.
+                        </p>
+
+                        <div class="row mt-5">
+                            <div class="col-6">
+                                <p>__________________________</p>
+                                <p>Employee Signature</p>
+                            </div>
+                            <div class="col-6 text-right">
+                                <p>__________________________</p>
+                                <p>IT Manager Signature</p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

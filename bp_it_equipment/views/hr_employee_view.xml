@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_inherit_it" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.it</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="%(hr_employee_return_wizard_action)d"
+                        string="Return All Equipment"
+                        type="action"
+                        class="oe_highlight"
+                        help="Click to return all assigned IT equipment back to stock"
+                        invisible="not equipment_ids"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="IT Equipment" name="it_equipment">
+                    <field name="equipment_ids" readonly="1"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

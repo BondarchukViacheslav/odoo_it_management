@@ -76,9 +76,23 @@
         </field>
     </record>
 
+    <record id="bp_it_consumable_consumable_view_pivot" model="ir.ui.view">
+        <field name="name">bp.it.consumable.consumable.view.pivot</field>
+        <field name="model">bp.it.consumable.consumable</field>
+        <field name="arch" type="xml">
+            <pivot string="Compatibility Analysis" sample="1">
+                <field name="compatible_equipment_ids" type="row"/>
+                <field name="name" type="row"/>
+
+                <field name="qty_available" type="measure"/>
+                <field name="qty_min" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
     <record id="bp_it_consumable_consumable_action" model="ir.actions.act_window">
         <field name="name">Consumables Catalog</field>
         <field name="res_model">bp.it.consumable.consumable</field>
-        <field name="view_mode">kanban,list,form</field>
+        <field name="view_mode">kanban,list,pivot,form</field>
     </record>
 </odoo>

@@ -3,7 +3,6 @@ Wizard model for automating consumable requests.
 """
 from odoo import models, fields, api
 from odoo.fields import Command
-from odoo.exceptions import UserError
 
 
 class BPITConsumableRequestWizard(models.TransientModel):

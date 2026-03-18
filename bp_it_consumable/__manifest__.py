@@ -29,7 +29,6 @@
         'views/bp_it_consumable_consumable_view.xml',
         'views/bp_it_consumable_issue_view.xml',
         'views/bp_it_consumable_request_view.xml',
-        'views/bp_it_consumable_request_line_view.xml',
 
         'views/bp_it_consumable_menu.xml',
 
@@ -49,4 +48,3 @@
         'static/description/icon.png'
     ],
 }
-

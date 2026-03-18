@@ -60,10 +60,12 @@ class BPITConsumableRequest(models.Model):
         return super().create(vals_list)
 
     def action_mark_ordered(self):
+        """Set request state to ordered."""
         for record in self:
             record.state = 'ordered'
 
     def action_mark_received(self):
+        """Set request state to received."""
         for record in self:
             record.state = 'received'
 

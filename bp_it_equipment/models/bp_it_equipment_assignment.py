@@ -11,7 +11,7 @@ class BPITEquipmentAssignment(models.Model):
     name = fields.Char(
         string='Reference',
         readonly=True,
-        default=_('New')
+        default=lambda self: self.env._('New')
     )
 
     equipment_id = fields.Many2one(

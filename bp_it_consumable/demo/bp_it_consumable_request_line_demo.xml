@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="demo_request_1_line_1" model="bp.it.consumable.request.line">
+            <field name="request_id" ref="demo_request_1"/>
+            <field name="consumable_id" ref="demo_consumable_hp_toner"/>
+            <field name="qty">5.0</field>
+        </record>
+        <record id="demo_request_1_line_2" model="bp.it.consumable.request.line">
+            <field name="request_id" ref="demo_request_1"/>
+            <field name="consumable_id" ref="demo_consumable_canon_toner"/>
+            <field name="qty">3.0</field>
+        </record>
+
+        <record id="demo_request_2_line_1" model="bp.it.consumable.request.line">
+            <field name="request_id" ref="demo_request_2"/>
+            <field name="consumable_id" ref="demo_consumable_mouse"/>
+            <field name="qty">10.0</field>
+        </record>
+        <record id="demo_request_2_line_2" model="bp.it.consumable.request.line">
+            <field name="request_id" ref="demo_request_2"/>
+            <field name="consumable_id" ref="demo_consumable_epson_ink"/>
+            <field name="qty">10.0</field>
+        </record>
+
+        <record id="demo_request_3_line_1" model="bp.it.consumable.request.line">
+            <field name="request_id" ref="demo_request_3"/>
+            <field name="consumable_id" ref="demo_consumable_hdmi"/>
+            <field name="qty">20.0</field>
+        </record>
+        <record id="demo_request_3_line_2" model="bp.it.consumable.request.line">
+            <field name="request_id" ref="demo_request_3"/>
+            <field name="consumable_id" ref="demo_consumable_hp_toner"/>
+            <field name="qty">2.0</field>
+        </record>
+        <record id="demo_request_3_line_3" model="bp.it.consumable.request.line">
+            <field name="request_id" ref="demo_request_3"/>
+            <field name="consumable_id" ref="demo_consumable_brother_toner"/>
+            <field name="qty">6.0</field>
+        </record>
+    </data>
+</odoo>

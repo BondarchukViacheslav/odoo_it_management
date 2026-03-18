@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bp_it_consumable_res_partner_view_form_inherit" model="ir.ui.view">
+        <field name="name">bp.it.consumable.res.partner.view.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="is_consumable_supplier"/>
+                <field name="consumable_category_ids" widget="many2many_tags" invisible="not is_consumable_supplier"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="bp_it_consumable_res_partner_action" model="ir.actions.act_window">
+        <field name="name">Suppliers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_consumable_supplier', '=', True)]</field>
+        <field name="context">{'default_is_consumable_supplier': True, 'default_is_company': True}</field>
+    </record>
+</odoo>

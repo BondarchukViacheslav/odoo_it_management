@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_consumable_request" model="ir.actions.report">
+        <field name="name">Supplier Request</field>
+        <field name="model">bp.it.consumable.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">bp_it_consumable.report_consumable_request_template</field>
+        <field name="report_file">bp_it_consumable.report_consumable_request_template</field>
+        <field name="print_report_name">'Request - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_bp_it_consumable_request"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_consumable_request_document">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+
+                <h2 class="mt-4">
+                    <span>Consumable Request: </span>
+                    <span t-field="doc.name"/>
+                </h2>
+
+                <div class="row mt-4 mb-4" id="informations">
+                    <div class="col-auto mw-100 mb-2">
+                        <strong>Supplier:</strong>
+                        <p class="m-0" t-field="doc.partner_id.name"/>
+                    </div>
+                    <div class="col-auto mw-100 mb-2">
+                        <strong>Date:</strong>
+                        <p class="m-0" t-field="doc.request_date"/>
+                    </div>
+                    <div class="col-auto mw-100 mb-2">
+                        <strong>Status:</strong>
+                        <p class="m-0" t-field="doc.state"/>
+                    </div>
+                </div>
+
+                <table class="table table-sm o_main_table mt-4">
+                    <thead>
+                        <tr>
+                            <th name="th_consumable" class="text-start">Consumable Item</th>
+                            <th name="th_quantity" class="text-end">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="doc.line_ids" t-as="line">
+                            <tr>
+                                <td class="text-start">
+                                    <span t-field="line.consumable_id.name"/>
+                                </td>
+                                <td class="text-end">
+                                    <span t-field="line.qty"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_consumable_request_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="bp_it_consumable.report_consumable_request_document"
+                   t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

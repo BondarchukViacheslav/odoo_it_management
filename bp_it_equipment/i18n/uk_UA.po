@@ -1,0 +1,995 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * bp_it_equipment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-17 11:43+0000\n"
+"PO-Revision-Date: 2026-03-17 11:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: Ukrainian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. module: bp_it_equipment
+#: model:ir.actions.report,print_report_name:bp_it_equipment.action_report_employee_equipment
+msgid "'Equipment - %s' % (object.name)"
+msgstr "'Обладнання - %s' % (object.name)"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid ""
+"<br/>\n"
+"                                <strong>Department:</strong>"
+msgstr ""
+"<br/>\n"
+"                                <strong>Відділ:</strong>"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid ""
+"<br/>\n"
+"                                <strong>Job Position:</strong>"
+msgstr ""
+"<br/>\n"
+"                                <strong>Посада:</strong>"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_kanban
+msgid "<span>S/N:</span>"
+msgstr "<span>С/Н:</span>"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Дата:</strong>"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid "<strong>Employee:</strong>"
+msgstr "<strong>Співробітник:</strong>"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__message_needaction
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__message_needaction
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__message_needaction
+msgid "Action Needed"
+msgstr "Необхідна дія"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__active
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_assignment__state__active
+msgid "Active"
+msgstr "Активно"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_assignment_view_search
+msgid "Active Assignments"
+msgstr "Активні призначення"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__activity_ids
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__activity_ids
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__activity_ids
+msgid "Activities"
+msgstr "Дії"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__activity_exception_decoration
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__activity_exception_decoration
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Оформлення виключної дії"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__activity_state
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__activity_state
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__activity_state
+msgid "Activity State"
+msgstr "Статус дії"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__activity_type_icon
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__activity_type_icon
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Іконка типу дії"
+
+#. module: bp_it_equipment
+#: model:res.groups,comment:bp_it_equipment.group_bp_it_equipment_admin
+msgid "Admin: full access to all IT infrastructure records."
+msgstr "Адмін: повний доступ до всіх записів ІТ-інфраструктури."
+
+#. module: bp_it_equipment
+#: model:res.groups,name:bp_it_equipment.group_bp_it_equipment_admin
+msgid "Administrator"
+msgstr "Адміністратор"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_software__software_type__app
+msgid "Application"
+msgstr "Додаток"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_search
+msgid "Archived"
+msgstr "Архівовано"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_equipment__state__assigned
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_status_log__new_state__assigned
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_status_log__old_state__assigned
+msgid "Assigned"
+msgstr "Призначено"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee__equipment_ids
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_category_view_form
+msgid "Assigned Equipment"
+msgstr "Призначене обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.actions.report,name:bp_it_equipment.action_report_employee_equipment
+msgid "Assigned Equipment Report"
+msgstr "Звіт про призначене обладнання"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid "Assigned IT Equipment"
+msgstr "Призначене ІТ-обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__employee_id
+msgid "Assigned To"
+msgstr "Призначено для"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard_line__assignment_id
+msgid "Assignment"
+msgstr "Призначення"
+
+#. module: bp_it_equipment
+#: model:ir.actions.act_window,name:bp_it_equipment.bp_it_equipment_assignment_action
+#: model:ir.ui.menu,name:bp_it_equipment.bp_it_equipment_assignment_menu_list
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_assignment_view_list
+msgid "Assignments"
+msgstr "Призначення"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__message_attachment_count
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__message_attachment_count
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__message_attachment_count
+msgid "Attachment Count"
+msgstr "Кількість вкладень"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_equipment__state__available
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_status_log__new_state__available
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_status_log__old_state__available
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_search
+msgid "Available"
+msgstr "В наявності"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.hr_employee_return_wizard_view_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__category_id
+#: model:ir.ui.menu,name:bp_it_equipment.bp_it_equipment_category_menu_list
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_search
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid "Category"
+msgstr "Категорії"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_category__name
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_category_view_form
+msgid "Category Name"
+msgstr "Назва категорії"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__change_date
+msgid "Change Date"
+msgstr "Дата зміни"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__user_id
+msgid "Changed By"
+msgstr "Ким змінено"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_res_users__is_it_technician
+msgid "Check this if the user is part of the IT support team."
+msgstr "Позначте це, якщо користувач є частиною команди ІТ-підтримки."
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.view_employee_form_inherit_it
+msgid "Click to return all assigned IT equipment back to stock"
+msgstr "Натисніть, щоб повернути все призначене ІТ-обладнання на склад"
+
+#. module: bp_it_equipment
+#: model:ir.ui.menu,name:bp_it_equipment.bp_it_equipment_configuration_menu_main
+msgid "Configuration"
+msgstr "Налаштування"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_assignment_view_form
+msgid "Confirm Assignment"
+msgstr "Підтвердити призначення"
+
+#. module: bp_it_equipment
+#: model_terms:ir.actions.act_window,help:bp_it_equipment.bp_it_equipment_equipment_action
+msgid "Create your first equipment!"
+msgstr "Створіть своє перше обладнання!"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__create_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_category__create_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__create_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software__create_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__create_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__create_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard__create_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard_line__create_uid
+msgid "Created by"
+msgstr "Ким створено"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__create_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_category__create_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__create_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software__create_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__create_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__create_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard__create_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard_line__create_date
+msgid "Created on"
+msgstr "Коли створено"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__employee_id
+msgid "Current user of this equipment"
+msgstr "Поточний користувач цього обладнання"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_assignment_view_form
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_form
+msgid "Dates"
+msgstr "Дати"
+
+#. module: bp_it_equipment
+#: model_terms:ir.actions.act_window,help:bp_it_equipment.bp_it_equipment_category_action
+msgid "Define your equipment categories here."
+msgstr "Визначте ваші категорії обладнання тут."
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software__notes
+msgid "Description"
+msgstr "Опис"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__display_name
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_category__display_name
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__display_name
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software__display_name
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__display_name
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__name
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__display_name
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard__display_name
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard_line__display_name
+#: model:ir.model.fields,field_description:bp_it_equipment.field_res_users__display_name
+msgid "Display Name"
+msgstr "Назва для відображення"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_assignment__state__draft
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_status_log__new_state__draft
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_status_log__old_state__draft
+msgid "Draft"
+msgstr "Чернетка"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_software__software_type__driver
+msgid "Driver"
+msgstr "Драйвер"
+
+#. module: bp_it_equipment
+#: model:ir.model,name:bp_it_equipment.model_hr_employee
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__employee_id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard__employee_id
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_assignment_view_search
+msgid "Employee"
+msgstr "Співробітник"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.hr_employee_return_wizard_view_form
+msgid "Employee Offboarding: Return Equipment"
+msgstr "Звільнення співробітника: Повернення обладнання"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid "Employee Signature"
+msgstr "Підпис співробітника"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__date_end
+msgid "End Date"
+msgstr "Дата завершення"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_form
+msgid "Enter key here..."
+msgstr "Введіть ключ тут..."
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__equipment_id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__equipment_id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard_line__equipment_id
+#: model:ir.ui.menu,name:bp_it_equipment.bp_it_equipment_equipment_menu_list
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_assignment_view_search
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_list
+msgid "Equipment"
+msgstr "Обладнання"
+
+#. module: bp_it_equipment
+#. odoo-python
+#: code:addons/bp_it_equipment/models/bp_it_equipment_assignment.py:0
+msgid "Equipment %s is %s and cannot be assigned."
+msgstr "Обладнання %s має статус %s і не може бути призначене."
+
+#. module: bp_it_equipment
+#. odoo-python
+#: code:addons/bp_it_equipment/models/bp_it_equipment_assignment.py:0
+msgid "Equipment %s is still assigned to %s. Please return it first!"
+msgstr "Обладнання %s все ще призначене %s. Будь ласка, спочатку поверніть його!"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_graph
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_pivot
+msgid "Equipment Analysis"
+msgstr "Аналіз обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model,name:bp_it_equipment.model_bp_it_equipment_assignment
+msgid "Equipment Assignment"
+msgstr "Призначення обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.actions.act_window,name:bp_it_equipment.bp_it_equipment_category_action
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_category_view_list
+msgid "Equipment Categories"
+msgstr "Категорії обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model,name:bp_it_equipment.model_bp_it_equipment_category
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_category_view_form
+msgid "Equipment Category"
+msgstr "Категорія обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_category__equipment_count
+msgid "Equipment Count"
+msgstr "Кількість обладнання"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_category_view_form
+msgid "Equipment Details"
+msgstr "Деталі обладнання"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid "Equipment Handover Report"
+msgstr "Акт прийому-передачі обладнання"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.hr_employee_return_wizard_view_form
+msgid "Equipment List"
+msgstr "Список обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__name
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid "Equipment Name"
+msgstr "Назва обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__equipment_state
+msgid "Equipment Status"
+msgstr "Статус обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model,name:bp_it_equipment.model_bp_it_equipment_status_log
+msgid "Equipment Status Log"
+msgstr "Журнал статусів обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard__line_ids
+msgid "Equipment to Return"
+msgstr "Обладнання до повернення"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_category__equipment_ids
+msgid "Equipments"
+msgstr "Обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard_line__condition
+msgid "Final Condition"
+msgstr "Кінцевий стан"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__message_follower_ids
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__message_follower_ids
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__message_follower_ids
+msgid "Followers"
+msgstr "Підписники"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__message_partner_ids
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__message_partner_ids
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Підписники (Партнери)"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_assignment__activity_type_icon
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__activity_type_icon
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_software_instance__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Іконка Font awesome, наприклад fa-tasks"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__hr_employee_return_wizard_line__condition__available
+msgid "Good (Available)"
+msgstr "Хороший (В наявності)"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__has_message
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__has_message
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__has_message
+msgid "Has Message"
+msgstr "Має повідомлення"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_form
+msgid "History"
+msgstr "Історія"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_category__id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software__id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee__id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard__id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard_line__id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_res_users__id
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_assignment_view_list
+msgid "ID"
+msgstr "ID"
+
+#. module: bp_it_equipment
+#: model:ir.actions.act_window,name:bp_it_equipment.bp_it_equipment_equipment_action
+#: model:ir.model,name:bp_it_equipment.model_bp_it_equipment_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.view_employee_form_inherit_it
+msgid "IT Equipment"
+msgstr "ІТ Обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.ui.menu,name:bp_it_equipment.bp_it_equipment_menu_root
+msgid "IT Infrastructure"
+msgstr "ІТ Інфраструктура"
+
+#. module: bp_it_equipment
+#: model:res.groups.privilege,name:bp_it_equipment.privilege_bp_it_management
+msgid "IT Infrastructure Management"
+msgstr "Управління ІТ-інфраструктурою"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid "IT Manager Signature"
+msgstr "Підпис ІТ-менеджера"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__activity_exception_icon
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__activity_exception_icon
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__activity_exception_icon
+msgid "Icon"
+msgstr "Іконка"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_assignment__activity_exception_icon
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__activity_exception_icon
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_software_instance__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Іконка для позначення виключної дії."
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_assignment__message_needaction
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__message_needaction
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_software_instance__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Якщо позначено, нові повідомлення потребують вашої уваги."
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_assignment__message_has_error
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__message_has_error
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_software_instance__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Якщо позначено, деякі повідомлення мають помилку доставки."
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_equipment__state__repair
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_search
+msgid "In Repair"
+msgstr "В ремонті"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__installation_date
+msgid "Installation Date"
+msgstr "Дата встановлення"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__equipment_id
+msgid "Installed On"
+msgstr "Встановлено на"
+
+#. module: bp_it_equipment
+#: model:ir.actions.act_window,name:bp_it_equipment.bp_it_equipment_software_instance_action
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__software_instance_ids
+msgid "Installed Software"
+msgstr "Встановлене ПЗ"
+
+#. module: bp_it_equipment
+#: model:ir.model,name:bp_it_equipment.model_bp_it_equipment_software_instance
+msgid "Installed Software Instance"
+msgstr "Екземпляр встановленого ПЗ"
+
+#. module: bp_it_equipment
+#: model:ir.ui.menu,name:bp_it_equipment.bp_it_equipment_software_instance_menu_list
+msgid "Instance"
+msgstr "Встановлене ПЗ"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__note
+msgid "Internal Notes"
+msgstr "Внутрішні примітки"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__inventory_number
+msgid "Internal company asset ID"
+msgstr "Внутрішній ID активу компанії"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__inventory_number
+msgid "Inventory Number"
+msgstr "Інвентарний номер"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__message_is_follower
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__message_is_follower
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__message_is_follower
+msgid "Is Follower"
+msgstr "Стежить"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_res_users__is_it_technician
+msgid "Is IT Technician"
+msgstr "Є ІТ-техніком"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__write_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_category__write_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__write_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software__write_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__write_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__write_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard__write_uid
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard_line__write_uid
+msgid "Last Updated by"
+msgstr "Останнім оновив"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__write_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_category__write_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__write_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software__write_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__write_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__write_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard__write_date
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard_line__write_date
+msgid "Last Updated on"
+msgstr "Останнє оновлення"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__license_key
+msgid "License Key / ID"
+msgstr "Ліцензійний ключ / ID"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__license_required
+msgid "License Required"
+msgstr "Ліцензія обов'язкова"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software__default_license_required
+msgid "License Required by Default"
+msgstr "Ліцензія обов'язкова за замовчуванням"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_hr_employee__equipment_ids
+msgid "List of IT equipment currently assigned to this employee."
+msgstr "Список ІТ-обладнання, яке зараз призначене цьому співробітнику."
+
+#. module: bp_it_equipment
+#: model:ir.model,name:bp_it_equipment.model_hr_employee_return_wizard_line
+msgid "Mass Equipment Return Line"
+msgstr "Рядок масового повернення обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model,name:bp_it_equipment.model_hr_employee_return_wizard
+msgid "Mass Equipment Return Wizard"
+msgstr "Помічник масового повернення обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__message_has_error
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__message_has_error
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__message_has_error
+msgid "Message Delivery error"
+msgstr "Помилка доставки повідомлення"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__message_ids
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__message_ids
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__message_ids
+msgid "Messages"
+msgstr "Повідомлення"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__name
+msgid "Model name, e.g. MacBook Pro 14 or Dell U2412M"
+msgstr "Назва моделі, наприклад MacBook Pro 14 або Dell U2412M"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__my_activity_date_deadline
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__my_activity_date_deadline
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Дедлайн моєї дії"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__hr_employee_return_wizard_line__condition__repair
+msgid "Needs Repair"
+msgstr "Потребує ремонту"
+
+#. module: bp_it_equipment
+#. odoo-python
+#: code:addons/bp_it_equipment/models/bp_it_equipment_assignment.py:0
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_equipment__state__draft
+msgid "New"
+msgstr "Нове"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__new_state
+msgid "New Status"
+msgstr "Новий статус"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__activity_date_deadline
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__activity_date_deadline
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Дедлайн наступної дії"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__activity_summary
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__activity_summary
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__activity_summary
+msgid "Next Activity Summary"
+msgstr "Підсумок наступної дії"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__activity_type_id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__activity_type_id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__activity_type_id
+msgid "Next Activity Type"
+msgstr "Тип наступної дії"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid "No equipment assigned to this employee."
+msgstr "Немає обладнання, призначеного цьому співробітнику."
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__note
+msgid "Note"
+msgstr "Примітка"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_form
+msgid "Notes"
+msgstr "Примітки"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__message_needaction_counter
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__message_needaction_counter
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Кількість дій"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__message_has_error_counter
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__message_has_error_counter
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__message_has_error_counter
+msgid "Number of errors"
+msgstr "Кількість помилок"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_assignment__message_needaction_counter
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__message_needaction_counter
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_software_instance__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Кількість повідомлень, що потребують дії"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_assignment__message_has_error_counter
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__message_has_error_counter
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_software_instance__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Кількість повідомлень з помилкою доставки"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_status_log__old_state
+msgid "Old Status"
+msgstr "Старий статус"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_software__software_type__service
+msgid "Online Service"
+msgstr "Онлайн-сервіс"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_software__software_type__os
+msgid "Operating System"
+msgstr "Операційна система"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_assignment_view_form
+msgid "Primary Info"
+msgstr "Основна інформація"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.hr_employee_return_wizard_view_form
+msgid "Process All Returns"
+msgstr "Обробити всі повернення"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__purchase_date
+msgid "Purchase Date"
+msgstr "Дата покупки"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__name
+msgid "Reference"
+msgstr "Референс"
+
+#. module: bp_it_equipment
+#: model:res.groups,comment:bp_it_equipment.group_bp_it_equipment_user
+msgid "Regular user: can view equipment and assignments."
+msgstr "Звичайний користувач: може переглядати обладнання та призначення."
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_status_log__new_state__repair
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_status_log__old_state__repair
+msgid "Repair"
+msgstr "Ремонт"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__activity_user_id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__activity_user_id
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__activity_user_id
+msgid "Responsible User"
+msgstr "Відповідальний користувач"
+
+#. module: bp_it_equipment
+#: model:ir.actions.act_window,name:bp_it_equipment.hr_employee_return_wizard_action
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.view_employee_form_inherit_it
+msgid "Return All Equipment"
+msgstr "Повернути все обладнання"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_assignment_view_form
+msgid "Return Equipment"
+msgstr "Повернути обладнання"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_assignment__state__returned
+msgid "Returned"
+msgstr "Повернуто"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_equipment__state__scrapped
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_status_log__new_state__scrapped
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__bp_it_equipment_status_log__old_state__scrapped
+msgid "Scrapped"
+msgstr "Списано"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_search
+msgid "Search Equipment"
+msgstr "Пошук обладнання"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_form
+msgid "Send to Repair"
+msgstr "Відправити на ремонт"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__serial_number
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid "Serial Number"
+msgstr "Серійний номер"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__active
+msgid "Set to False to hide the record without deleting it."
+msgstr "Встановіть значення False, щоб приховати запис, не видаляючи його."
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__software_id
+#: model:ir.ui.menu,name:bp_it_equipment.bp_it_equipment_software_menu_list
+#: model:ir.ui.menu,name:bp_it_equipment.bp_it_equipment_software_menu_main
+msgid "Software"
+msgstr "Програмне забезпечення"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_form
+msgid "Software & Licenses"
+msgstr "ПЗ та ліцензії"
+
+#. module: bp_it_equipment
+#: model:ir.actions.act_window,name:bp_it_equipment.bp_it_equipment_software_action
+#: model:ir.model,name:bp_it_equipment.model_bp_it_equipment_software
+msgid "Software Catalog"
+msgstr "Каталог ПЗ"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software__name
+msgid "Software Name"
+msgstr "Назва ПЗ"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software__software_type
+msgid "Software Type"
+msgstr "Тип ПЗ"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__date_start
+msgid "Start Date"
+msgstr "Дата початку"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_search
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.report_employee_equipment_template
+msgid "State"
+msgstr "Стан"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__state
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__state
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_assignment_view_search
+msgid "Status"
+msgstr "Статус"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_form
+msgid "Status History"
+msgstr "Історія статусів"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__status_log_ids
+msgid "Status Log"
+msgstr "Журнал статусів"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_assignment__activity_state
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__activity_state
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_software_instance__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Статус на основі дій\n"
+"Прострочено: термін виконання вже минув\n"
+"Сьогодні: дата дії сьогодні\n"
+"Заплановано: майбутні дії."
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_form
+msgid "Technical Info"
+msgstr "Технічна інформація"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_category_view_list
+msgid "Total Items"
+msgstr "Всього одиниць"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__software_type
+msgid "Type"
+msgstr "Тип"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_assignment__activity_exception_decoration
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__activity_exception_decoration
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_software_instance__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Тип виключної дії в записі."
+
+#. module: bp_it_equipment
+#: model:ir.model,name:bp_it_equipment.model_res_users
+#: model:res.groups,name:bp_it_equipment.group_bp_it_equipment_user
+msgid "User"
+msgstr "Користувач"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_form
+msgid "Validate"
+msgstr "Підтвердити"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software__vendor
+msgid "Vendor"
+msgstr "Постачальник"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__warranty_expiry
+msgid "Warranty Expiry"
+msgstr "Закінчення гарантії"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_assignment__website_message_ids
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_equipment__website_message_ids
+#: model:ir.model.fields,field_description:bp_it_equipment.field_bp_it_equipment_software_instance__website_message_ids
+msgid "Website Messages"
+msgstr "Повідомлення веб-сайту"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_assignment__website_message_ids
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_equipment__website_message_ids
+#: model:ir.model.fields,help:bp_it_equipment.field_bp_it_equipment_software_instance__website_message_ids
+msgid "Website communication history"
+msgstr "Історія спілкування на веб-сайті"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields,field_description:bp_it_equipment.field_hr_employee_return_wizard_line__wizard_id
+msgid "Wizard"
+msgstr "Помічник"
+
+#. module: bp_it_equipment
+#: model:ir.model.fields.selection,name:bp_it_equipment.selection__hr_employee_return_wizard_line__condition__scrapped
+msgid "Worn Out (Scrapped)"
+msgstr "Зношено (Списано)"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_equipment_view_form
+msgid "e.g. Laptop HP EliteBook"
+msgstr "напр. Ноутбук HP EliteBook"
+
+#. module: bp_it_equipment
+#: model_terms:ir.ui.view,arch_db:bp_it_equipment.bp_it_equipment_category_view_form
+msgid "e.g. Laptops"
+msgstr "напр. Ноутбуки"
+
+

@@ -6,4 +6,4 @@ from . import bp_it_consumable_request
 from . import bp_it_consumable_request_line
 from . import bp_it_consumable_res_partner
 from . import bp_it_consumable_hr_employee
-from . import bp_it_consumable_equipment
+from . import bp_it_equipment_equipment

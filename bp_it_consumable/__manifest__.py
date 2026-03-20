@@ -1,6 +1,6 @@
 {
     'name': 'IT Consumable Management',
-    'version': '19.0.9.1.5',
+    'version': '19.0.9.1.7',
     'category': 'IT Management',
     'summary': 'Облік витратних матеріалів та картриджів відділу IT',
     'sequence': 10,
@@ -8,9 +8,6 @@
     "Odoo Community Association (OCA)",
     'license': 'LGPL-3',
     'depends': [
-        'base',
-        'mail',
-        'hr',
         'bp_it_equipment',
     ],
     'data': [

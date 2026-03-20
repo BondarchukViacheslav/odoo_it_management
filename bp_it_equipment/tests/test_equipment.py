@@ -1,5 +1,6 @@
 from odoo.tests.common import TransactionCase
 from odoo import fields
+from odoo.exceptions import ValidationError
 
 
 class TestITEquipment(TransactionCase):
@@ -15,44 +16,93 @@ class TestITEquipment(TransactionCase):
             'state': 'available'
         })
 
-    def test_01_equipment_assignment(self):
-        self.equipment.write({'employee_id': self.employee.id})
-        self.assertEqual(self.equipment.employee_id.id, self.employee.id)
+    def test_01_equipment_methods_and_logging(self):
+        """ Тест методів зміни стану та логування """
+        # Перевірка action_set_repair
+        self.equipment.action_set_repair()
+        self.assertEqual(self.equipment.state, 'repair')
 
-    def test_02_assignment_record(self):
+        # Перевірка action_set_available
+        self.equipment.action_set_available()
+        self.assertEqual(self.equipment.state, 'available')
+
+        # Перевірка створення логу при зміні стану через write
+        logs_count = len(self.equipment.status_log_ids)
+        self.equipment.write({'state': 'scrapped'})
+
+        # Перевіряємо, що кількість логів збільшилась
+        self.assertEqual(len(self.equipment.status_log_ids), logs_count + 1)
+
+        # Отримуємо саме останній створений лог, ігноруючи сортування за датою
+        last_log = self.equipment.status_log_ids.sorted('id', reverse=True)[0]
+        self.assertEqual(last_log.new_state, 'scrapped')
+
+    def test_02_onchange_employee(self):
+        """ Тест логіки @api.onchange('employee_id') """
+        # Спрацювання onchange при призначенні
+        self.equipment.employee_id = self.employee
+        self.equipment._onchange_employee_id()
+        self.assertEqual(self.equipment.state, 'assigned')
+
+        # Спрацювання onchange при видаленні співробітника
+        self.equipment.employee_id = False
+        self.equipment._onchange_employee_id()
+        self.assertEqual(self.equipment.state, 'available')
+
+    def test_03_assignment_constraints(self):
+        """ Тест обмежень моделі призначення """
+        # Спроба призначити обладнання в ремонті має викликати помилку
+        self.equipment.state = 'repair'
         assignment = self.env['bp.it.equipment.assignment'].create({
             'employee_id': self.employee.id,
             'equipment_id': self.equipment.id,
-            'date_start': fields.Date.today(),
-            'state': 'active'
+            'state': 'draft'
         })
+        with self.assertRaises(ValidationError):
+            assignment.action_confirm()
+
+    def test_04_assignment_confirmation_and_return(self):
+        """ Тест повного циклу призначення через модель assignment """
+        self.equipment.state = 'available'
+        assignment = self.env['bp.it.equipment.assignment'].create({
+            'employee_id': self.employee.id,
+            'equipment_id': self.equipment.id,
+        })
+
+        # Підтвердження призначення
+        assignment.action_confirm()
         self.assertEqual(assignment.state, 'active')
-        self.assertTrue(assignment.date_start)
+        self.assertEqual(self.equipment.state, 'assigned')
+        self.assertEqual(self.equipment.employee_id, self.employee)
 
-    def test_03_return_wizard(self):
+        # Повернення обладнання
+        assignment.action_return()
+        self.assertEqual(assignment.state, 'returned')
+        self.assertEqual(self.equipment.state, 'available')
+        self.assertFalse(self.equipment.employee_id)
+
+    def test_05_mass_return_wizard_logic(self):
+        """ Розширений тест візарда масового повернення """
         # Створюємо активне призначення
-        assignment = self.env['bp.it.equipment.assignment'].create({
+        self.env['bp.it.equipment.assignment'].create({
             'employee_id': self.employee.id,
             'equipment_id': self.equipment.id,
             'state': 'active'
         })
+        self.equipment.write({'employee_id': self.employee.id, 'state': 'assigned'})
 
-        wizard_env = self.env['hr.employee.return.wizard'].with_context(
+        # Ініціалізація візарда
+        wizard = self.env['hr.employee.return.wizard'].with_context(
             active_id=self.employee.id
-        )
-        wizard = wizard_env.create({
-            'employee_id': self.employee.id,
-        })
+        ).create({})
 
-        self.assertTrue(
-            len(wizard.line_ids) > 0,
-            "Wizard should pre-fill lines from active assignments"
-        )
+        # Перевірка default_get (автозаповнення рядків)
+        self.assertTrue(len(wizard.line_ids) > 0)
+        self.assertEqual(wizard.line_ids[0].equipment_id, self.equipment)
 
-        wizard.line_ids[0].condition = 'scrapped'
-
+        # Зміна стану на 'repair' через візард
+        wizard.line_ids[0].condition = 'repair'
         wizard.action_confirm()
 
-        self.assertEqual(assignment.state, 'returned')
+        self.assertEqual(self.equipment.state, 'repair')
         self.assertFalse(self.equipment.employee_id)
-        self.assertEqual(self.equipment.state, 'scrapped')

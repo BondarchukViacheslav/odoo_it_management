@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="demo_category_toner" model="bp.it.consumable.category">
+            <field name="name">Toner Cartridges</field>
+        </record>
+        <record id="demo_category_peripherals" model="bp.it.consumable.category">
+            <field name="name">Peripherals (Mouse/Keyboard)</field>
+        </record>
+        <record id="demo_category_cables" model="bp.it.consumable.category">
+            <field name="name">Cables &amp; Adapters</field>
+        </record>
+    </data>
+</odoo>

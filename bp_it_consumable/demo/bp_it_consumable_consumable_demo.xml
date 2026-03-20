@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="demo_consumable_hp_toner" model="bp.it.consumable.consumable">
+            <field name="name">HP 59A Black Original LaserJet Toner</field>
+            <field name="category_id" ref="demo_category_toner"/>
+            <field name="qty_min">2.0</field>
+            <field name="qty_order">5.0</field>
+            <field name="compatible_equipment_ids" eval="[(6, 0, [ref('bp_it_equipment.demo_equipment_printer_1')])]"/>
+        </record>
+
+        <record id="demo_consumable_mouse" model="bp.it.consumable.consumable">
+            <field name="name">Logitech MX Master 3S</field>
+            <field name="category_id" ref="demo_category_peripherals"/>
+            <field name="qty_min">5.0</field>
+            <field name="qty_order">10.0</field>
+            <field name="compatible_equipment_ids" eval="[(6, 0, [ref('bp_it_equipment.demo_equipment_laptop_1')])]"/>
+        </record>
+
+        <record id="demo_consumable_hdmi" model="bp.it.consumable.consumable">
+            <field name="name">HDMI Cable 2.1 (2m)</field>
+            <field name="category_id" ref="demo_category_cables"/>
+            <field name="qty_min">10.0</field>
+            <field name="qty_order">20.0</field>
+            <field name="compatible_equipment_ids" eval="[(6, 0, [ref('bp_it_equipment.demo_equipment_monitor_1')])]"/>
+        </record>
+
+        <record id="demo_consumable_canon_toner" model="bp.it.consumable.consumable">
+            <field name="name">Canon Cartridge 057H Black (High Yield)</field>
+            <field name="category_id" ref="demo_category_toner"/>
+            <field name="qty_min">1.0</field>
+            <field name="qty_order">3.0</field>
+            <field name="compatible_equipment_ids" eval="[(6, 0, [ref('bp_it_equipment.demo_equipment_printer_1')])]"/>
+        </record>
+
+        <record id="demo_consumable_epson_ink" model="bp.it.consumable.consumable">
+            <field name="name">Epson EcoTank 103 Black Ink Bottle</field>
+            <field name="category_id" ref="demo_category_toner"/>
+            <field name="qty_min">4.0</field>
+            <field name="qty_order">10.0</field>
+            <field name="compatible_equipment_ids" eval="[(6, 0, [ref('bp_it_equipment.demo_equipment_printer_1')])]"/>
+        </record>
+
+        <record id="demo_consumable_brother_toner" model="bp.it.consumable.consumable">
+            <field name="name">Brother TN-2410 Toner Cartridge</field>
+            <field name="category_id" ref="demo_category_toner"/>
+            <field name="qty_min">3.0</field>
+            <field name="qty_order">6.0</field>
+            <field name="compatible_equipment_ids" eval="[(6, 0, [ref('bp_it_equipment.demo_equipment_printer_1')])]"/>
+        </record>
+    </data>
+</odoo>

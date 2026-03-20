@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bp_it_consumable_equipment_view_form_inherit" model="ir.ui.view">
+        <field name="name">bp.it.consumable.equipment.view.form.inherit</field>
+        <field name="model">bp.it.equipment.equipment</field>
+        <field name="inherit_id" ref="bp_it_equipment.bp_it_equipment_equipment_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Consumables" name="consumables">
+                    <field name="consumable_issue_ids" readonly="1">
+                        <list>
+                            <field name="issue_date"/>
+                            <field name="consumable_id"/>
+                            <field name="employee_id"/>
+                            <field name="qty"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

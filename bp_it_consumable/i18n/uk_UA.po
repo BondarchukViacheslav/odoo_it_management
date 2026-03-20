@@ -1,0 +1,562 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bp_it_consumable
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-18 17:00+0000\n"
+"PO-Revision-Date: 2026-03-18 17:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/models/bp_it_consumable_request_line.py:0
+msgid "%(request)s - %(consumable)s"
+msgstr ""
+
+#. module: bp_it_consumable
+#: model:ir.actions.report,print_report_name:bp_it_consumable.action_report_consumable_request
+msgid "'Request - %s' % (object.name)"
+msgstr ""
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_consumable_view_kanban
+msgid "/ Min:"
+msgstr "/ Мін:"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_consumable_view_kanban
+msgid "<i class=\"fa fa-cubes\"/> Qty:"
+msgstr "<i class=\"fa fa-cubes\"/> К-сть:"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_consumable_view_kanban
+msgid "<i class=\"fa fa-share-square-o\"/> Issue"
+msgstr "<i class=\"fa fa-share-square-o\"/> Видати"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.report_consumable_request_document
+msgid "<span>Consumable Request: </span>"
+msgstr "<span>Заявка на постачання: </span>"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.report_consumable_request_document
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Дата:</strong>"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.report_consumable_request_document
+msgid "<strong>Status:</strong>"
+msgstr "<strong>Статус:</strong>"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.report_consumable_request_document
+msgid "<strong>Supplier:</strong>"
+msgstr "<strong>Постачальник:</strong>"
+
+#. module: bp_it_consumable
+#: model:res.groups,comment:bp_it_consumable.group_bp_it_consumable_admin
+msgid "Admin: full access to all consumable records and settings."
+msgstr ""
+"Адміністратор: повний доступ до всіх записів та налаштувань витратних "
+"матеріалів."
+
+#. module: bp_it_consumable
+#: model:res.groups,name:bp_it_consumable.group_bp_it_consumable_admin
+msgid "Administrator (Consumables)"
+msgstr "Адміністратор (Витратні матеріали)"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_request_view_form
+msgid "Auto-Fill Lines"
+msgstr "Автозаповнення рядків"
+
+#. module: bp_it_consumable
+#: model:ir.model,name:bp_it_consumable.model_bp_it_consumable_request_wizard
+msgid "Automated Consumable Request Wizard"
+msgstr "Майстер автоматичного створення заявок"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_request_wizard_view_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: bp_it_consumable
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_configuration_category_menu
+msgid "Categories"
+msgstr "Категорії"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_wizard__category_ids
+msgid "Categories to Order"
+msgstr "Категорії для замовлення"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__category_id
+msgid "Category"
+msgstr "Категорія"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_category_view_form
+msgid "Category Name"
+msgstr "Назва категорії"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,help:bp_it_consumable.field_res_partner__is_consumable_supplier
+#: model:ir.model.fields,help:bp_it_consumable.field_res_users__is_consumable_supplier
+msgid "Check this box if this partner supplies IT consumables."
+msgstr "Відмітьте, якщо цей партнер постачає IT витратні матеріали."
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_consumable_view_pivot
+msgid "Compatibility Analysis"
+msgstr "Аналіз сумісності"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__compatible_equipment_ids
+msgid "Compatible Equipment"
+msgstr "Сумісна техніка"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__compatible_equipment_ids
+msgid "Compatible Equipments"
+msgstr "Сумісна техніка"
+
+#. module: bp_it_consumable
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_configuration_menu
+msgid "Configuration"
+msgstr "Налаштування"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_request_view_form
+msgid "Confirm Order"
+msgstr "Підтвердити замовлення"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__consumable_id
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_line__consumable_id
+msgid "Consumable"
+msgstr "Витратний матеріал"
+
+#. module: bp_it_consumable
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_consumables_menu
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_integrated_consumables_menu
+msgid "Consumable Catalog"
+msgstr "Каталог витратних матеріалів"
+
+#. module: bp_it_consumable
+#: model:ir.actions.act_window,name:bp_it_consumable.bp_it_consumable_category_action
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_config_category_menu
+msgid "Consumable Categories"
+msgstr "Категорії витратних матеріалів"
+
+#. module: bp_it_consumable
+#: model:ir.model,name:bp_it_consumable.model_bp_it_consumable_category
+msgid "Consumable Category"
+msgstr "Категорія витратного матеріалу"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_equipment_equipment__consumable_issue_ids
+msgid "Consumable Issue"
+msgstr "Видача матеріалу"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_hr_employee__consumable_issue_count
+msgid "Consumable Issue Count"
+msgstr "Кількість виданих матеріалів"
+
+#. module: bp_it_consumable
+#: model:ir.model,name:bp_it_consumable.model_bp_it_consumable_issue
+msgid "Consumable Issue Log"
+msgstr "Журнал видачі матеріалів"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_issue_view_pivot
+msgid "Consumable Issues Analysis"
+msgstr "Аналіз видачі матеріалів"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.report_consumable_request_document
+msgid "Consumable Item"
+msgstr "Витратний матеріал"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_consumable_view_form
+msgid "Consumable Name"
+msgstr "Назва витратного матеріалу"
+
+#. module: bp_it_consumable
+#: model:ir.model,name:bp_it_consumable.model_bp_it_consumable_request
+msgid "Consumable Request"
+msgstr "Заявка на постачання"
+
+#. module: bp_it_consumable
+#: model:ir.model,name:bp_it_consumable.model_bp_it_consumable_request_line
+msgid "Consumable Request Line"
+msgstr "Рядок заявки"
+
+#. module: bp_it_consumable
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_config_supplier_menu
+msgid "Consumable Suppliers"
+msgstr "Постачальники витратних матеріалів"
+
+#. module: bp_it_consumable
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_integrated_menu
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_menu_root
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_equipment_view_form_inherit
+msgid "Consumables"
+msgstr "Витратні матеріали"
+
+#. module: bp_it_consumable
+#: model:ir.actions.act_window,name:bp_it_consumable.bp_it_consumable_consumable_action
+msgid "Consumables Catalog"
+msgstr "Каталог витратних матеріалів"
+
+#. module: bp_it_consumable
+#: model:ir.model,name:bp_it_consumable.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_category__create_uid
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__create_uid
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__create_uid
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request__create_uid
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_line__create_uid
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_wizard__create_uid
+msgid "Created by"
+msgstr "Створив"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_category__create_date
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__create_date
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__create_date
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request__create_date
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_line__create_date
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_wizard__create_date
+msgid "Created on"
+msgstr "Дата створення"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_category__display_name
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__display_name
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__display_name
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request__display_name
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_line__display_name
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_wizard__display_name
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_equipment_equipment__display_name
+#: model:ir.model.fields,field_description:bp_it_consumable.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:bp_it_consumable.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Назва для відображення"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields.selection,name:bp_it_consumable.selection__bp_it_consumable_request__state__draft
+msgid "Draft"
+msgstr "Чернетка"
+
+#. module: bp_it_consumable
+#: model:ir.model,name:bp_it_consumable.model_hr_employee
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__employee_id
+msgid "Employee"
+msgstr "Співробітник"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__equipment_id
+msgid "Equipment"
+msgstr "Техніка"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_request_wizard_view_form
+msgid "Generate"
+msgstr "Згенерувати"
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/wizard/bp_it_consumable_request_wizard.py:0
+#: model:ir.actions.act_window,name:bp_it_consumable.bp_it_consumable_request_wizard_action_consumable
+#: model:ir.actions.act_window,name:bp_it_consumable.bp_it_consumable_request_wizard_action_consumable_request
+#: model:ir.actions.act_window,name:bp_it_consumable.bp_it_consumable_request_wizard_action_res_partner
+msgid "Generate Consumable Request"
+msgstr "Згенерувати заявку на постачання"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_request_wizard_view_form
+msgid "Generate Request"
+msgstr "Згенерувати заявку"
+
+#. module: bp_it_consumable
+#: model:ir.actions.act_window,name:bp_it_consumable.bp_it_consumable_request_wizard_action
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_integrated_request_wizard_menu
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_request_wizard_menu
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_consumable_view_list
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_request_view_list
+msgid "Generate Requests"
+msgstr "Генерація заявок"
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/wizard/bp_it_consumable_request_wizard.py:0
+msgid "Generated Request"
+msgstr "Згенерована заявка"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_category__id
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__id
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__id
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request__id
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_line__id
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_wizard__id
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_equipment_equipment__id
+#: model:ir.model.fields,field_description:bp_it_consumable.field_hr_employee__id
+#: model:ir.model.fields,field_description:bp_it_consumable.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: bp_it_consumable
+#: model:ir.model,name:bp_it_consumable.model_bp_it_consumable_consumable
+msgid "IT Consumable"
+msgstr "IT Витратний матеріал"
+
+#. module: bp_it_consumable
+#: model:ir.model,name:bp_it_consumable.model_bp_it_equipment_equipment
+msgid "IT Equipment"
+msgstr "IT Техніка"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_res_partner__is_consumable_supplier
+#: model:ir.model.fields,field_description:bp_it_consumable.field_res_users__is_consumable_supplier
+msgid "Is Consumable Supplier"
+msgstr "Є постачальником витратних матеріалів"
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/models/bp_it_consumable_issue.py:0
+msgid "Issue %(consumable)s to %(employee)s"
+msgstr "Видано %(consumable)s співробітнику %(employee)s"
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/models/bp_it_consumable_consumable.py:0
+msgid "Issue Consumable"
+msgstr "Видати матеріал"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__issue_date
+msgid "Issue Date"
+msgstr "Дата видачі"
+
+#. module: bp_it_consumable
+#: model:ir.actions.act_window,name:bp_it_consumable.bp_it_consumable_issue_action
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_integrated_issue_menu
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_issue_menu
+msgid "Issue Log"
+msgstr "Журнал видачі"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__issue_ids
+msgid "Issues"
+msgstr "Видачі"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_category__write_uid
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__write_uid
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__write_uid
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request__write_uid
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_line__write_uid
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Останнє оновлення"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_category__write_date
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__write_date
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__write_date
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request__write_date
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_line__write_date
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_wizard__write_date
+msgid "Last Updated on"
+msgstr "Дата останнього оновлення"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request__line_ids
+msgid "Line"
+msgstr "Рядок"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_request_view_form
+msgid "Lines"
+msgstr "Рядки"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_category__name
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__name
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request__name
+msgid "Name"
+msgstr "Назва"
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/models/bp_it_consumable_request.py:0
+msgid "New"
+msgstr "Нова"
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/models/bp_it_consumable_category.py:0
+msgid "New Category"
+msgstr "Нова категорія"
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/models/bp_it_consumable_consumable.py:0
+msgid "New Consumable"
+msgstr "Новий витратний матеріал"
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/models/bp_it_consumable_issue.py:0
+msgid "New Issue"
+msgstr "Нова видача"
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/models/bp_it_consumable_request_line.py:0
+msgid "New Line"
+msgstr "Новий рядок"
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/models/bp_it_consumable_request.py:0
+msgid "No consumables require restocking at this moment."
+msgstr "Наразі немає витратних матеріалів, що потребують замовлення."
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,help:bp_it_consumable.field_bp_it_consumable_issue__equipment_id
+msgid "Optional: specific equipment this consumable was used for."
+msgstr "Необов'язково: конкретна техніка, для якої було використано матеріал."
+
+#. module: bp_it_consumable
+#: model:ir.model.fields.selection,name:bp_it_consumable.selection__bp_it_consumable_request__state__ordered
+msgid "Ordered"
+msgstr "Замовлено"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request__partner_id
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_wizard__partner_id
+msgid "Partner"
+msgstr "Партнер"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_issue__qty
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_line__qty
+msgid "Qty"
+msgstr "К-сть"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__qty_available
+msgid "Qty Available"
+msgstr "Доступна кількість"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__qty_min
+msgid "Qty Min"
+msgstr "Мін. кількість"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__qty_order
+msgid "Qty Order"
+msgstr "Кількість для замовлення"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.report_consumable_request_document
+msgid "Quantity"
+msgstr "Кількість"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_request_view_form
+msgid "Receive Products"
+msgstr "Отримати товари"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields.selection,name:bp_it_consumable.selection__bp_it_consumable_request__state__received
+msgid "Received"
+msgstr "Отримано"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request_line__request_id
+msgid "Request"
+msgstr "Заявка"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request__request_date
+msgid "Request Date"
+msgstr "Дата заявки"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_consumable__request_line_ids
+msgid "Request Lines"
+msgstr "Рядки заявки"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,help:bp_it_consumable.field_bp_it_consumable_request_wizard__partner_id
+msgid "Select the supplier for the generated request."
+msgstr "Оберіть постачальника для генерації заявки."
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_bp_it_consumable_request__state
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_request_view_search
+msgid "State"
+msgstr "Статус"
+
+#. module: bp_it_consumable
+#: model:ir.model.fields,field_description:bp_it_consumable.field_res_partner__consumable_category_ids
+#: model:ir.model.fields,field_description:bp_it_consumable.field_res_users__consumable_category_ids
+msgid "Supplied Categories"
+msgstr "Категорії, що постачаються"
+
+#. module: bp_it_consumable
+#: model_terms:ir.ui.view,arch_db:bp_it_consumable.bp_it_consumable_request_view_search
+msgid "Supplier"
+msgstr "Постачальник"
+
+#. module: bp_it_consumable
+#: model:ir.actions.report,name:bp_it_consumable.action_report_consumable_request
+msgid "Supplier Request"
+msgstr "Заявка постачальнику"
+
+#. module: bp_it_consumable
+#: model:ir.actions.act_window,name:bp_it_consumable.bp_it_consumable_request_action
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_integrated_request_menu
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_request_menu
+msgid "Supplier Requests"
+msgstr "Заявки постачальникам"
+
+#. module: bp_it_consumable
+#: model:ir.actions.act_window,name:bp_it_consumable.bp_it_consumable_res_partner_action
+#: model:ir.ui.menu,name:bp_it_consumable.bp_it_consumable_configuration_supplier_menu
+msgid "Suppliers"
+msgstr "Постачальники"
+
+#. module: bp_it_consumable
+#: model:res.groups,name:bp_it_consumable.group_bp_it_consumable_user
+msgid "User (Consumables)"
+msgstr "Користувач (Витратні матеріали)"
+
+#. module: bp_it_consumable
+#: model:res.groups,comment:bp_it_consumable.group_bp_it_consumable_user
+msgid "User: can view own consumable requests."
+msgstr "Користувач: може бачити власні заявки на витратні матеріали."
+
+#. module: bp_it_consumable
+#. odoo-python
+#: code:addons/bp_it_consumable/models/bp_it_consumable_request.py:0
+msgid "You can only repopulate lines for a draft request."
+msgstr "Ви можете перезаповнити рядки лише для заявки-чернетки."

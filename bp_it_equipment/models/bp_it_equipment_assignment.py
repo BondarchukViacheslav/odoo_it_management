@@ -53,6 +53,11 @@ class BPITEquipmentAssignment(models.Model):
     ]
 
     def action_confirm(self):
+        """
+        Confirm the equipment assignment to the employee.
+        Validates if the equipment is not already assigned or in repair.
+        Updates equipment state to 'Assigned' and links it to the employee.
+        """
         for record in self:
             if record.equipment_id.employee_id:
                 raise ValidationError(
@@ -77,6 +82,11 @@ class BPITEquipmentAssignment(models.Model):
             })
 
     def action_return(self):
+        """
+        Process the equipment return.
+        Sets equipment state back to 'Available', clears the employee link,
+        and sets the assignment end date.
+        """
         for record in self:
             record.equipment_id.state = 'available'
             record.state = 'returned'

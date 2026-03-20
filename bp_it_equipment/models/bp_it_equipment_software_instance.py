@@ -51,7 +51,7 @@ class BPITEquipmentSoftwareInstance(models.Model):
         if self.software_id:
             self.license_required = self.software_id.default_license_required
 
-    def name_get(self):
+    def _compute_display_name(self):
         result = []
         for record in self:
             name = f"{record.software_id.name} ({record.equipment_id.name})"

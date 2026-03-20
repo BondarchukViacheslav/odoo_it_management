@@ -70,19 +70,26 @@ class BPITEquipmentEquipment(models.Model):
     )
 
     def action_set_available(self):
-        """ Sets the equipment status to Available. """
+        """
+        Set the equipment state to 'Available'.
+        Used for manual stock return or after completing repairs.
+        """
         for record in self:
             record.state = 'available'
 
     def action_set_repair(self):
-        """ Sets the equipment status to In Repair. """
+        """
+        Set the equipment state to 'In Repair'.
+        Used when the equipment requires maintenance or technical support.
+        """
         for record in self:
             record.state = 'repair'
 
     @api.model_create_multi
     def create(self, vals_list):
         """
-        Override create to automatically generate the first status log entry.
+        Override create method to automatically generate a status log entry.
+        Creates an 'Initial creation' log for every new equipment record.
         """
         records = super().create(vals_list)
         for record in records:
@@ -95,7 +102,9 @@ class BPITEquipmentEquipment(models.Model):
 
     def write(self, vals):
         """
-        Override write to detect state changes and log them for history tracking.
+        Override write method to track changes in the 'state' field.
+        If the state changes, a new entry is created in the status log
+        history with previous and new state values.
         """
         for record in self:
             if 'state' in vals and record.state != vals['state']:
@@ -111,6 +120,10 @@ class BPITEquipmentEquipment(models.Model):
 
     @api.model
     def _read_group_state(self, *args, **kwargs):
+        """
+        Ensure all state columns are displayed in the Kanban view,
+        even if they don't contain any records.
+        """
         state_list = [key for key, val in self._fields['state'].selection]
         return state_list
 

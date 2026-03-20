@@ -17,11 +17,11 @@ class HREmployeeReturnWizard(models.TransientModel):
     )
 
     @api.model
-    def default_get(self, fields):
+    def default_get(self, fields_list):
         """
         Pre-fills the wizard lines with all active assignments for the selected employee.
         """
-        res = super(HREmployeeReturnWizard, self).default_get(fields)
+        res = super(HREmployeeReturnWizard, self).default_get(fields_list)
         active_id = self.env.context.get('active_id')
         if active_id:
             res['employee_id'] = active_id

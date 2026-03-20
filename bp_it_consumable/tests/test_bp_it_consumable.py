@@ -2,6 +2,7 @@
 Tests for IT Consumable Management module.
 """
 from odoo.tests.common import TransactionCase
+from odoo.exceptions import UserError
 
 
 class TestBPITConsumable(TransactionCase):
@@ -98,3 +99,30 @@ class TestBPITConsumable(TransactionCase):
         self.assertTrue(any(
             line.consumable_id == self.consumable for line in request.line_ids
         ))
+
+    def test_06_action_repopulate_lines(self):
+        """Test the repopulate lines action for draft requests."""
+        # Setup the partner: add the category from setUp
+        self.partner.consumable_category_ids = [(6, 0, [self.category.id])]
+
+        # Create an empty draft request
+        request = self.env['bp.it.consumable.request'].create({
+            'partner_id': self.partner.id,
+        })
+
+        # Verify that the request is created without lines
+        self.assertEqual(len(request.line_ids), 0)
+
+        # Call the auto-fill method
+        request.action_repopulate_lines()
+
+        # Verify if our test consumable was added (it has qty_available=0, qty_min=5)
+        self.assertEqual(len(request.line_ids), 1)
+        self.assertEqual(request.line_ids[0].consumable_id, self.consumable)
+        # Quantity should be equal to qty_order (which is 10.0 in our setUp)
+        self.assertEqual(request.line_ids[0].qty, 10.0)
+
+        # Verify that the method raises an error if the request is not in draft state
+        request.state = 'ordered'
+        with self.assertRaises(UserError):
+            request.action_repopulate_lines()

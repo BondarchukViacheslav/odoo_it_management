@@ -24,6 +24,7 @@
 
         'views/bp_it_consumable_res_partner_view.xml',
         'views/bp_it_consumable_equipment_view.xml',
+        'views/bp_it_consumable_hr_employee_view.xml',
 
         'views/bp_it_consumable_category_view.xml',
         'views/bp_it_consumable_consumable_view.xml',
